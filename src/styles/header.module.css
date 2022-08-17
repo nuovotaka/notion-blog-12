@@ -1,0 +1,31 @@
+.header {
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+}
+.header h1 {
+  padding: 0.5rem 0;
+  font-weight: 400;
+  color: #000;
+}
+.header h1 a {
+  color: inherit;
+}
+.header ul {
+  list-style: none;
+  margin: inherit;
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+}
+@media (max-width: 600px) {
+  .header ul {
+    font-size: 1rem;
+  }
+}
+.header ul li {
+  display: inline-block;
+  padding: 0 15px;
+}
+.header ul li :global(a.active) {
+  color: var(--accents-3);
+}
