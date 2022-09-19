@@ -25,12 +25,14 @@ export interface Block {
   Quote?: Quote
   Equation?: Equation
   Callout?: Callout
+  SyncedBlock?: SyncedBlock
+  Toggle?: Toggle
   Embed?: Embed
   Video?: Video
   Bookmark?: Bookmark
   LinkPreview?: LinkPreview
   Table?: Table
-  TableRow?: TableRow
+  ColumnList?: ColumnList
 }
 
 export interface Paragraph {
@@ -110,6 +112,21 @@ export interface Callout {
   Color: string
 }
 
+export interface SyncedBlock {
+  SyncedFrom: SyncedFrom
+  Children?: Block[]
+}
+
+export interface SyncedFrom {
+  BlockId: string
+}
+
+export interface Toggle {
+  RichTexts: RichText[]
+  Color: string
+  Children: Block[]
+}
+
 export interface Embed {
   Url: string
 }
@@ -126,15 +143,29 @@ export interface Table {
   TableWidth: number
   HasColumnHeader: boolean
   HasRowHeader: boolean
-  Rows: Block[]
+  Rows: TableRow[]
 }
 
 export interface TableRow {
+  Id: string
+  Type: string
+  HasChildren: boolean
   Cells: TableCell[]
 }
 
 export interface TableCell {
   RichTexts: RichText[]
+}
+
+export interface ColumnList {
+  Columns: Column[]
+}
+
+export interface Column {
+  Id: string
+  Type: string
+  HasChildren: boolean
+  Children: Block[]
 }
 
 export interface List {
