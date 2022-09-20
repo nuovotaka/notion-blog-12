@@ -15,6 +15,7 @@ const Header = () => {
   const navItems: NavItem[] = [
     { label: 'Home', path: '/' },
     { label: 'Blog', path: '/blog' },
+    { label: 'NUOVOTAKA.com', path: 'https://nuovotaka.com' },
     { label: 'Privacy', path: '/privacy' },
   ]
 
