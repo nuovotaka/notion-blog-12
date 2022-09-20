@@ -7,16 +7,20 @@ exports[`RenderPage renders the page unchanged 1`] = `
   >
     <div>
       <h2>
-        Welcome!
+        About
       </h2>
       <p>
-        Your easy-notion-blog deployed successfully!
+        Mac関連のこと、日常的な事などを書いていきます。
       </p>
       <p>
-        Have fun!
+        最近は病気の事とレザークラフトのことが多いです。
       </p>
       <p>
-        easy-notion-blog powered by
+        時々更新のブログ。
+      </p>
+      <p>
+        dev.NUOVOTAKA
+         powered by
          
         <a
           href="https://github.com/otoyo/easy-notion-blog"

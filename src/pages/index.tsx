@@ -8,6 +8,7 @@ const RenderPage = () => (
     <DocumentHead />
 
     <div>
+      <ExtLink href="https://nuovotaka.com/"> NUOVOTAKA.com</ExtLink>
       <h2>About</h2>
       <p>Mac関連のこと、日常的な事などを書いていきます。</p>
       <p>最近は病気の事とレザークラフトのことが多いです。</p>
