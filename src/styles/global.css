@@ -176,3 +176,7 @@ table th {
   padding: 0.5rem 1rem;
   line-height: 1.2rem;
 }
+
+.font-bold {
+  font-weight: bold;
+}
