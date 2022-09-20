@@ -21,3 +21,11 @@
   margin: 0.3rem auto;
   line-height: 2rem;
 }
+
+.container a h2 {
+  margin: 0 0 14px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--accents-1);
+  text-decoration: none;
+}
