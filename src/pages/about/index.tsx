@@ -4,7 +4,7 @@ import styles from '../../styles/page.module.css'
 
 const RenderPage = () => (
   <div className={styles.container}>
-    <DocumentHead />
+    <DocumentHead title="About"/>
 
     <div>
       <h2>About</h2>

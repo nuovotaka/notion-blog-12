@@ -3,7 +3,7 @@ import styles from '../../styles/page.module.css'
 
 const RenderPage = () => (
   <div className={styles.container}>
-    <DocumentHead />
+    <DocumentHead title="Privacy" />
 
     <div>
       <h2>Privacy</h2>
