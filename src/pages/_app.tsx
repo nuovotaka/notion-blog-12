@@ -6,6 +6,7 @@ import * as gtag from '../lib/gtag'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import GoogleAnalytics from '../components/google-analytics'
+import GoogleADS from '../components/google-ads'
 
 import '../styles/syntax-coloring.css'
 import styles from '../styles/shared.module.css'
@@ -27,6 +28,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <GoogleAnalytics />
+      <GoogleADS />
       <div className={styles.container}>
         <Header />
         <div className={styles.content}>
