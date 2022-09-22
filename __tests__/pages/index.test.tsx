@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import RenderPage from '../../src/pages/index'
+import Index from '../../src/pages/index'
 
 jest.mock('next/router', () => ({
   useRouter() {
@@ -10,9 +10,9 @@ jest.mock('next/router', () => ({
   },
 }))
 
-describe('RenderPage', () => {
+describe('Index', () => {
   it('renders the page unchanged', () => {
-    const { container } = render(<RenderPage />)
+    const { container } = render(<Index firstPost={undefined} />)
     expect(container).toMatchSnapshot()
   })
 })

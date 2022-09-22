@@ -1,7 +1,7 @@
 jest.mock('../../../src/lib/notion/blog-index-cache')
 
 import { render } from '@testing-library/react'
-import RenderPosts from '../../../src/pages/blog/index'
+import Index from '../../../src/pages'
 
 import {
   getPosts,
@@ -19,7 +19,7 @@ jest.mock('next/router', () => ({
   },
 }))
 
-describe('RenderPosts', () => {
+describe('Index', () => {
   it('renders the page unchanged', async () => {
     const posts = await getPosts()
     const firstPost = await getFirstPost()
@@ -27,7 +27,7 @@ describe('RenderPosts', () => {
     const tags = await getAllTags()
 
     const { container } = render(
-      <RenderPosts
+      <Index
         posts={posts}
         firstPost={firstPost}
         rankedPosts={rankedPosts}
