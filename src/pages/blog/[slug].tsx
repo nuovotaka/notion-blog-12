@@ -36,7 +36,7 @@ export async function getStaticProps({ params: { slug } }) {
     console.log(`Failed to find post for slug: ${slug}`)
     return {
       props: {
-        redirect: '/blog',
+        redirect: '/',
       },
       revalidate: 30,
     }

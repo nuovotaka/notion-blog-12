@@ -1,25 +1,81 @@
 import DocumentHead from '../components/document-head'
-import ExtLink from '../components/ext-link'
-import { SITE_TITLE } from '../components/document-head'
-import styles from '../styles/page.module.css'
+import {
+  BlogPostLink,
+  BlogTagLink,
+  NextPageLink,
+  NoContents,
+  PostDate,
+  PostExcerpt,
+  PostTags,
+  PostTitle,
+  ReadMoreLink,
+} from '../components/blog-parts'
+import styles from '../styles/blog.module.css'
+import {
+  getPosts,
+  getFirstPost,
+  getRankedPosts,
+  getAllTags,
+} from '../lib/notion/client'
 
-const RenderPage = () => (
-  <div className={styles.container}>
-    <DocumentHead />
+export async function getStaticProps() {
+  const [posts, firstPost, rankedPosts, tags] = await Promise.all([
+    getPosts(),
+    getFirstPost(),
+    getRankedPosts(),
+    getAllTags(),
+  ])
 
-    <div>
-      <h2>About</h2>
-      <p>Mac関連のこと、日常的な事などを書いていきます。</p>
-      <p>最近は病気の事とレザークラフトのことが多いです。</p>
-      <p>時々更新のブログ。</p>
-      <p>
-        {SITE_TITLE} powered by{' '}
-        <ExtLink href="https://github.com/otoyo/easy-notion-blog">
-          otoyo/easy-notion-blog
-        </ExtLink>
-      </p>
+  return {
+    props: {
+      posts,
+      firstPost,
+      rankedPosts,
+      tags,
+    },
+    revalidate: 60,
+  }
+}
+
+
+const Index = ({
+  posts = [],
+  firstPost,
+  rankedPosts = [],
+  tags = [],
+}) => {
+  return (
+    <div className={styles.container}>
+      <DocumentHead title="Home" />
+
+      <div className={styles.mainContent}>
+        <NoContents contents={posts} />
+
+        {posts.map(post => {
+          return (
+            <div className={styles.post} key={post.Slug}>
+              <PostDate post={post} />
+              <PostTags post={post} />
+              <PostTitle post={post} />
+              <PostExcerpt post={post} />
+              <ReadMoreLink post={post} />
+            </div>
+          )
+        })}
+
+        <footer>
+          <NextPageLink firstPost={firstPost} posts={posts} />
+        </footer>
+      </div>
+
+      <div className={styles.subContent}>
+        <a id="Recommended"></a>
+        <BlogPostLink heading="Recommended" posts={rankedPosts} />
+        <BlogTagLink heading="Categories" tags={tags} />
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
-export default RenderPage
+
+export default Index;

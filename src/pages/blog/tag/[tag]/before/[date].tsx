@@ -36,7 +36,7 @@ export async function getStaticProps({ params: { tag, date } }) {
     console.log(`Failed to find posts for tag: ${tag}`)
     return {
       props: {
-        redirect: '/blog',
+        redirect: '/',
       },
       revalidate: 30,
     }
