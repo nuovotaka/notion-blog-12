@@ -68,6 +68,7 @@ figure {
 a {
   color: var(--accents-1);
   text-decoration: none;
+  cursor: pointer;
 }
 a:hover {
   color: var(--accents-2);

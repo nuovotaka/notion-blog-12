@@ -59,17 +59,15 @@
 
 .nextPageLink {
   color: var(--fg);
+  text-align: right;
 }
 .nextPageLink a {
-  display: block;
   width: 30%;
   margin: 0 auto;
-  border: 1px solid var(--accents-2);
-  color: inherit;
-  font-size: 0.85rem;
-  text-align: center;
-  line-height: 3rem;
+  font-size: 1rem;
+  line-height: 1rem;
 }
+
 @media (max-width: 600px) {
   .nextPageLink a {
     width: 50%;
