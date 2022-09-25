@@ -104,7 +104,11 @@ const RenderPostsBeforeDate = ({
         })}
 
         <footer>
-          <NextPageLink firstPost={firstPost} posts={posts} />
+          <div className={styles.PageLinkContainer}>
+            <a className={styles.previusPageLink}
+              onClick={() => router.back()}>← Newer Page</a>
+            <NextPageLink firstPost={firstPost} posts={posts} />
+          </div>
         </footer>
       </div>
 

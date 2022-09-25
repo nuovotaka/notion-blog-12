@@ -64,7 +64,9 @@ const Index = ({
         })}
 
         <footer>
-          <NextPageLink firstPost={firstPost} posts={posts} />
+          <div className={styles.nextPageLink}>
+            <NextPageLink firstPost={firstPost} posts={posts} />
+          </div>
         </footer>
       </div>
 

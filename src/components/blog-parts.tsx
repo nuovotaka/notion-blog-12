@@ -85,7 +85,7 @@ export const NextPageLink = ({ firstPost, posts, tag = '' }) => {
         }
         passHref
       >
-        <a>Next page ＞</a>
+        <a>Next Page →</a>
       </Link>
     </div>
   )

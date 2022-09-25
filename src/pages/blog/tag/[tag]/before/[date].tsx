@@ -116,7 +116,11 @@ const RenderPostsByTagBeforeDate = ({
         })}
 
         <footer>
-          <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
+          <div className={styles.PageLinkContainer}>
+            <a className={styles.previusPageLink}
+              onClick={() => router.back()}>← Newer Page</a>
+            <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
+          </div>
         </footer>
       </div>
 
