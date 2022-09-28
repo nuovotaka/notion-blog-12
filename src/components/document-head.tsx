@@ -12,6 +12,7 @@ const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
 
   return (
     <Head>
+      <meta charSet='UTF-8' />
       <meta name="viewport" content="width=device-width,initial-scale=1" />
       <title>{title ? `${title} - ${SITE_TITLE}` : SITE_TITLE}</title>
       <meta
