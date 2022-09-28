@@ -1,0 +1,21 @@
+.font-bold {
+  font-weight: bold;
+}
+
+.PageLinkContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.previusPageLink {
+}
+.previusPageLink a {
+  width: 30%;
+  margin: 0 auto;
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.nextPageLink {
+  text-align: right;
+}

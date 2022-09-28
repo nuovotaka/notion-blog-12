@@ -11,6 +11,8 @@ import {
   ReadMoreLink,
 } from '../components/blog-parts'
 import styles from '../styles/blog.module.css'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Mystyles from '../styles/mystyles.module.css'
 import {
   getPosts,
   getFirstPost,
@@ -64,7 +66,7 @@ const Index = ({
         })}
 
         <footer>
-          <div className={styles.nextPageLink}>
+          <div className={Mystyles.nextPageLink}>
             <NextPageLink firstPost={firstPost} posts={posts} />
           </div>
         </footer>

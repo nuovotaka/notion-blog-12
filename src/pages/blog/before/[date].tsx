@@ -16,6 +16,8 @@ import {
   ReadMoreLink,
 } from '../../../components/blog-parts'
 import styles from '../../../styles/blog.module.css'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Mystyles from '../../../styles/mystyles.module.css'
 
 import { getBeforeLink } from '../../../lib/blog-helpers'
 import {
@@ -104,8 +106,8 @@ const RenderPostsBeforeDate = ({
         })}
 
         <footer>
-          <div className={styles.PageLinkContainer}>
-            <a className={styles.previusPageLink}
+          <div className={Mystyles.PageLinkContainer}>
+            <a className={Mystyles.previusPageLink}
               onClick={() => router.back()}>← Newer Page</a>
             <NextPageLink firstPost={firstPost} posts={posts} />
           </div>
