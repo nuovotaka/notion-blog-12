@@ -57,6 +57,7 @@
   border-top: 2px solid #808080;
   border-bottom: 2px solid #808080;
   z-index: 30;
+  opacity: 90%;
 }
 
 .footer ul li {
