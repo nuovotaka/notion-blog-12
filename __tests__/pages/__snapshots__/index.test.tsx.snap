@@ -13,7 +13,11 @@ exports[`Index renders the page unchanged 1`] = `
       >
         There are no contents yet
       </div>
-      <footer />
+      <footer>
+        <div
+          class="nextPageLink"
+        />
+      </footer>
     </div>
     <div
       class="subContent"
@@ -45,41 +49,6 @@ exports[`Index renders the page unchanged 1`] = `
           There are no contents yet
         </div>
       </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`RenderPage renders the page unchanged 1`] = `
-<div>
-  <div
-    class="container"
-  >
-    <div>
-      <h2>
-        About
-      </h2>
-      <p>
-        Mac関連のこと、日常的な事などを書いていきます。
-      </p>
-      <p>
-        最近は病気の事とレザークラフトのことが多いです。
-      </p>
-      <p>
-        時々更新のブログ。
-      </p>
-      <p>
-        dev.NUOVOTAKA
-         powered by
-         
-        <a
-          href="https://github.com/otoyo/easy-notion-blog"
-          rel="noopener"
-          target="_blank"
-        >
-          otoyo/easy-notion-blog
-        </a>
-      </p>
     </div>
   </div>
 </div>
