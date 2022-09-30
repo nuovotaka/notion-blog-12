@@ -1,40 +1,32 @@
 import React from 'react'
-import YouTube, { YouTubeProps } from 'react-youtube'
-import { isYouTubeURL, parseYouTubeVideoId } from '../../lib/blog-helpers'
+import ReactPlayer from 'react-player'
 
 import styles from '../../styles/notion-block.module.css'
 
 const Video = ({ block }) => {
-  let url: URL
-  try {
-    url = new URL(block.Video.External.Url)
-  } catch {
-    return null
-  }
+  const block_type = block.Video.Type
 
-  if (!isYouTubeURL(url)) {
-    return null
+  let video_url
+  switch (block_type) {
+    case 'external':
+      video_url = block.Video.External.Url
+      break;
+    case 'file':
+      video_url = block.Video.File.Url
+      break;
+    default:
+      break;
   }
-
-  const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-    event.target.pauseVideo()
-  }
-  const opts: YouTubeProps['opts'] = {
-    height: '390',
-    width: '640',
-    playerVars: {
-      autoplay: 1,
-    },
-  }
-
-  const videoId = parseYouTubeVideoId(url)
-  if (videoId === '') {
-    return null
-  }
-
   return (
     <div className={styles.video}>
-      <YouTube videoId={videoId} opts={opts} onReady={onPlayerReady} className={styles.youtube} />
+      <ReactPlayer
+        className={styles['react-player']}
+        width='100%'
+        height='100%'
+        url={video_url}
+        playing={false}
+        controls={true}
+      />
     </div>
   )
 }
