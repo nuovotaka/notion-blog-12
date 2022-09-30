@@ -469,6 +469,8 @@ function _buildBlock(item) {
 
       if (item.video.type === 'external') {
         video.External = { Url: item.video.external.url }
+      } else {
+        video.File = { Url: item.video.file.url }
       }
 
       block.Video = video
