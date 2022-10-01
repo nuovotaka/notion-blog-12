@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
+import { SourceProps } from 'react-player/base'
 
 import styles from '../../styles/notion-block.module.css'
 
 const Video = ({ block }) => {
   const block_type = block.Video.Type
 
-  let video_url
+  let video_url: string | string[] | SourceProps[] | MediaStream
   switch (block_type) {
     case 'external':
       video_url = block.Video.External.Url
