@@ -2,12 +2,15 @@ import dynamic from 'next/dynamic'
 
 const TweetEmbed = dynamic(() => import('./tweet-embed'))
 const Bookmark = dynamic(() => import('./bookmark'))
+const AudioSpotify = dynamic(() => import('./audio-spotify'))
 
 const Embed = ({ block }) => {
   if (/^https:\/\/twitter\.com/.test(block.Embed.Url)) {
     return <TweetEmbed url={block.Embed.Url} />
   } else if (/^https:\/\/gist\.github\.com/.test(block.Embed.Url)) {
     return <Bookmark block={block} />
+  } else if (/^https:\/\/open\.spotify\.com/.test(block.Embed.Url)) {
+    return <AudioSpotify url={block.Embed.Url} />
   }
 
   return null

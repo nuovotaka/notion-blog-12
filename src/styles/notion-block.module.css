@@ -246,3 +246,8 @@
   top: 0;
   left: 0;
 }
+
+.spotifyEmbed :first-child {
+  display: flex;
+  margin: auto;
+}

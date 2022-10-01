@@ -5345,6 +5345,11 @@ react-share@^4.4.0:
     classnames "^2.2.5"
     jsonp "^0.2.1"
 
+react-spotify-embed@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/react-spotify-embed/-/react-spotify-embed-0.2.3.tgz#ec6c0928449d34b482542b47246d4125df94b921"
+  integrity sha512-T4ceNkGn5M1ry/Y39I8HyhjSxeF2qv2W4uSK8XoB12r4PWPSQyuX3LOcVV/1mycQQUzPQlgwT1E6KGITEjvcJg==
+
 react-twitter-embed@^4.0.4:
   version "4.0.4"
   resolved "https://registry.npmjs.org/react-twitter-embed/-/react-twitter-embed-4.0.4.tgz"
