@@ -153,6 +153,10 @@
 }
 .toDo > div > input {
 }
+.toDo > div > input:checked + span {
+  color: #888;
+  text-decoration: line-through;
+}
 
 .bookmark {
   display: flex;
