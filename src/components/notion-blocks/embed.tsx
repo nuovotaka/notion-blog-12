@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 const TweetEmbed = dynamic(() => import('./tweet-embed'))
 const Bookmark = dynamic(() => import('./bookmark'))
 const AudioSpotify = dynamic(() => import('./audio-spotify'))
+const GoogleMapsEmbed = dynamic(() => import('./google-maps'))
 
 const Embed = ({ block }) => {
   if (/^https:\/\/twitter\.com/.test(block.Embed.Url)) {
@@ -11,6 +12,8 @@ const Embed = ({ block }) => {
     return <Bookmark block={block} />
   } else if (/^https:\/\/open\.spotify\.com/.test(block.Embed.Url)) {
     return <AudioSpotify url={block.Embed.Url} />
+  } else if (/^https:\/\/www\.google\.com/.test(block.Embed.Url)) {
+    return <GoogleMapsEmbed url={block.Embed.Url} />
   }
 
   return null
