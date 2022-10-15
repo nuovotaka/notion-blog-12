@@ -207,25 +207,26 @@ const ColumnList = ({ block }) => (
 )
 
 const List = ({ block }) => {
-  if (block.Type === 'bulleted_list') {
-    return (
-      <ul>
-        <BulletedListItems blocks={block.ListItems} />
-      </ul>
-    )
-  } else if (block.Type == 'numbered_list') {
-    return (
-      <ol>
-        <NumberedListItems blocks={block.ListItems} />
-      </ol>
-    )
+  switch (block.Type) {
+    case 'bulleted_list':
+      return (
+        <ul>
+          <BulletedListItems blocks={block.ListItems} />
+        </ul>
+      )
+    case 'numbered_list':
+      return (
+        <ol>
+          <NumberedListItems blocks={block.ListItems} />
+        </ol>
+      )
+    case 'to_do':
+      return (
+        <div className={styles.toDo}>
+          <ToDoItems blocks={block.ListItems} />
+        </div>
+      )
   }
-
-  return (
-    <div className={styles.toDo}>
-        <ToDoItems blocks={block.ListItems} />
-    </div>
-  )
 }
 
 const BulletedListItems = ({ blocks }) =>
@@ -244,13 +245,13 @@ const BulletedListItems = ({ blocks }) =>
         ))}
         {listItem.HasChildren ? (
           <ul>
-            <BulletedListItems blocks={listItem.BulletedListItem.Children} />
+            <ListBlocks blocks={listItem.BulletedListItem.Children} />
           </ul>
         ) : null}
       </li>
     ))
 
-const NumberedListItems = ({ blocks, level = 1 }) =>
+const NumberedListItems = ({ blocks }) =>
   blocks
     .filter((b: interfaces.Block) => b.Type === 'numbered_list_item')
     .map((listItem: interfaces.Block) => (
@@ -265,28 +266,11 @@ const NumberedListItems = ({ blocks, level = 1 }) =>
           />
         ))}
         {listItem.HasChildren ? (
-          level % 3 === 0 ? (
-            <ol type="1">
-              <NumberedListItems
+            <ol className={styles.numberedListItems}>
+              <ListBlocks
                 blocks={listItem.NumberedListItem.Children}
-                level={level + 1}
               />
             </ol>
-          ) : level % 3 === 1 ? (
-            <ol type="a">
-              <NumberedListItems
-                blocks={listItem.NumberedListItem.Children}
-                level={level + 1}
-              />
-            </ol>
-          ) : (
-            <ol type="i">
-              <NumberedListItems
-                blocks={listItem.NumberedListItem.Children}
-                level={level + 1}
-              />
-            </ol>
-          )
         ) : null}
       </li>
     ))
@@ -307,7 +291,7 @@ const ToDoItems = ({ blocks }) =>
         </span>
         {listItem.HasChildren ? (
           <ul>
-            <ToDoItems blocks={listItem.ToDo.Children} />
+            <ListBlocks blocks={listItem.ToDo.Children} />
           </ul>
         ) : null}
       </div>
@@ -371,6 +355,14 @@ const NotionBlock = ({ block }) => {
 }
 
 const NotionBlocks = ({ blocks }) => (
+  <>
+    {wrapListItems(blocks).map((block: interfaces.Block, i: number) => (
+      <NotionBlock block={block} key={`block-${i}`} />
+    ))}
+  </>
+)
+
+const ListBlocks =({ blocks }) => (
   <>
     {wrapListItems(blocks).map((block: interfaces.Block, i: number) => (
       <NotionBlock block={block} key={`block-${i}`} />
