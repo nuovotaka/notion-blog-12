@@ -276,10 +276,3 @@
   width: 100%;
   height: 40vh;
 }
-
-.numberedListItems ol {
-  list-style-type: lower-latin;
-}
-.numberedListItems ol > ol {
-  list-style-type: lower-roman;
-}
