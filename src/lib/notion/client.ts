@@ -404,6 +404,8 @@ export async function getAllBlocksByBlockId(blockId: string) {
       block.SyncedBlock.Children = await _getSyncedBlockChildren(block)
     } else if (block.Type === 'toggle') {
       block.Toggle.Children = await getAllBlocksByBlockId(block.Id)
+    } else if (block.Type === 'paragraph') {
+      block.Paragraph.Children = await getAllBlocksByBlockId(block.Id)
     }
   }
 

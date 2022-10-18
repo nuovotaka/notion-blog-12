@@ -93,6 +93,11 @@ const Paragraph = ({ block }) => (
     {block.Paragraph.RichTexts.map((richText: interfaces.RichText, i: number) => (
       <RichText richText={richText} key={`paragraph-${block.Id}-${i}`} />
     ))}
+    {block.HasChildren ? (
+      <div>
+        <NotionBlocks blocks={block.Paragraph.Children} />
+      </div>
+    ) : null}
   </p>
 )
 
