@@ -251,7 +251,7 @@ const BulletedListItems = ({ blocks }) =>
       </li>
     ))
 
-const NumberedListItems = ({ blocks, level = 1 }) =>
+const NumberedListItems = ({ blocks }) =>
   blocks
     .filter((b: interfaces.Block) => b.Type === 'numbered_list_item')
     .map((listItem: interfaces.Block) => (
