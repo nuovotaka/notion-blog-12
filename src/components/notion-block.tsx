@@ -266,28 +266,11 @@ const NumberedListItems = ({ blocks, level = 1 }) =>
           />
         ))}
         {listItem.HasChildren ? (
-          level % 3 === 0 ? (
             <ol type="1">
-              <NumberedListItems
+              <ListBlocks
                 blocks={listItem.NumberedListItem.Children}
-                level={level + 1}
               />
             </ol>
-          ) : level % 3 === 1 ? (
-            <ol type="a">
-              <NumberedListItems
-                blocks={listItem.NumberedListItem.Children}
-                level={level + 1}
-              />
-            </ol>
-          ) : (
-            <ol type="i">
-              <NumberedListItems
-                blocks={listItem.NumberedListItem.Children}
-                level={level + 1}
-              />
-            </ol>
-          )
         ) : null}
       </li>
     ))
