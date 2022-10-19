@@ -303,3 +303,9 @@
   width: 100%;
   height: 40vh;
 }
+
+.paragraph {
+}
+.paragraph P {
+  padding-inline-start: 25px;
+}

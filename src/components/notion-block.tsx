@@ -94,7 +94,7 @@ const Paragraph = ({ block }) => (
       <RichText richText={richText} key={`paragraph-${block.Id}-${i}`} />
     ))}
     {block.HasChildren ? (
-      <div>
+      <div className={styles.paragraph}>
         <NotionBlocks blocks={block.Paragraph.Children} />
       </div>
     ) : null}
