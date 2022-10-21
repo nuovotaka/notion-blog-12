@@ -8,6 +8,7 @@ const Bookmark = dynamic(() => import('./notion-blocks/bookmark'))
 const Video = dynamic(() => import('./notion-blocks/video'))
 const InlineEquation = dynamic(() => import('./notion-blocks/inline-equation'))
 const BlockEquation = dynamic(() => import('./notion-blocks/block-equation'))
+const Pdf = dynamic(() => import('./notion-blocks/pdf'))
 
 import styles from '../styles/notion-block.module.css'
 
@@ -363,6 +364,8 @@ const NotionBlock = ({ block, blocks }) => {
     return <Callout block={block} />
   } else if (block.Type === 'embed') {
     return <Embed block={block} />
+  } else if (block.Type === 'pdf') {
+    return <Pdf block={block} />
   } else if (block.Type === 'bookmark' || block.Type === 'link_preview') {
     return <Bookmark block={block} />
   } else if (block.Type === 'divider') {
