@@ -1,39 +1,31 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
 const Pdf = ({ block }) => {
+  const sURL = new URL(block.Pdf.File.Url)
+  const url = (new URL(sURL).origin).concat(new URL(sURL).pathname)
 
-	if (!(/^https:\/\/s3\.us-west-2\.amazonaws\.com/.test(block.Pdf.File.Url))) {
-    return null
-  }
+  const [pdfdata, setPdfdata] = useState(null)
 
-	const sURL = new URL(block.Pdf.File.Url)
-	let matched: Array<string>
-  try {
-    matched = new URL(sURL).pathname.match(/\.pdf$/)
-  } catch (error) {
-    console.log(error)
-    return null
-  }
+  useEffect(() => {
+    axios.get(url, {
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      responseType: 'blob'
+    })
+    .then(res => {
+      const blob = new Blob([res.data],{ type:'application/pdf'})
+      const url = window.URL || window.webkitURL
+      const src = url.createObjectURL(blob)
+      setPdfdata(src)
+    })
+  }, [url])
 
-  if (!matched) {
-    return null
-  }
-
-	const url = (new URL(sURL).origin).concat(new URL(sURL).pathname)
-
-  const openBlobPdf = () => {
-    fetch(`${url}`)
-      .then(res => {
-        res.blob().then(blobResponse => {
-          const fileUrl = URL.createObjectURL(blobResponse)
-          window.open(fileUrl)
-        })
-      })
-  }
+  console.log(pdfdata)
+  if(!pdfdata) return null
 
   return (
     <div>
-      <button type="button" onClick={openBlobPdf}>PDFを開く</button>
+
     </div>
   )
 }
