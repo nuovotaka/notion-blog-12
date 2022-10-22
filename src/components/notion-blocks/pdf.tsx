@@ -1,30 +1,35 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-const Pdf = ({ block }) => {
-  const sURL = new URL(block.Pdf.File.Url)
-  const url = (new URL(sURL).origin).concat(new URL(sURL).pathname)
+import styles from '../../styles/notion-block.module.css'
 
+const Pdf = ({ block }) => {
+
+  const url = new URL(block.Pdf.File.Url).href
   const [pdfdata, setPdfdata] = useState(null)
 
   useEffect(() => {
-    axios.get(url, {
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      responseType: 'blob'
-    })
-    .then(res => {
-      const blob = new Blob([res.data],{ type:'application/pdf'})
-      const url = window.URL || window.webkitURL
-      const src = url.createObjectURL(blob)
-      setPdfdata(src)
-    })
+    try {
+      axios.get(url, {
+        headers: {contentType: 'application/pdf'},
+        responseType: 'blob',
+      })
+      .then(res => {
+        const blob = new Blob([res.data],{ type:'application/pdf'})
+        const url = window.URL || window.webkitURL
+        const src = url.createObjectURL(blob)
+        setPdfdata(src)
+      })
+    } catch (e) {
+      console.log(e.message)
+    }
   }, [url])
 
   console.log(pdfdata)
   if(!pdfdata) return null
 
   return (
-    <div>
+    <div className={styles.pdf}>
 
     </div>
   )
