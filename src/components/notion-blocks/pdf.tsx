@@ -1,16 +1,6 @@
-import React, { useState } from 'react'
-
-import { Document, Page, pdfjs } from 'react-pdf'
-
-// ensure pdfjs can find its worker script regardless of how react-notion-x is bundled
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`
+import React from 'react'
 
 const Pdf = ({ block }) => {
-	const [numPages, setNumPages] = useState(null)
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages)
-  }
 
 	if (!(/^https:\/\/s3\.us-west-2\.amazonaws\.com/.test(block.Pdf.File.Url))) {
     return null
@@ -31,12 +21,20 @@ const Pdf = ({ block }) => {
 
 	const url = (new URL(sURL).origin).concat(new URL(sURL).pathname)
 
+  const openBlobPdf = () => {
+    fetch(`${url}`)
+      .then(res => {
+        res.blob().then(blobResponse => {
+          const fileUrl = URL.createObjectURL(blobResponse)
+          window.open(fileUrl)
+        })
+      })
+  }
+
   return (
-    <Document file={url} onLoadSuccess={onDocumentLoadSuccess}>
-      {Array.from(new Array(numPages), (_, index) => (
-        <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-      ))}
-    </Document>
+    <div>
+      <button type="button" onClick={openBlobPdf}>PDFを開く</button>
+    </div>
   )
 }
 
