@@ -14,7 +14,7 @@ const Pdf = ({ block }) => {
       try {
         axios.get(url, {
           headers: {contentType: 'application/pdf'},
-          responseType: 'blob',
+          responseType: 'arraybuffer',
         })
         .then(res => {
           const blob = new Blob([res.data],{ type:'application/pdf'})
