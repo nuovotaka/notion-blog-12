@@ -51,11 +51,11 @@ easy-notion-blog を使えば簡単にブログを開設できます。
 
 ## クイックスタート
 
-1. このリポジトリを Star します😉
+1. このリポジトリを Star します 😉
 2. [テンプレート](https://www.notion.so/otoyo/158bd90116004cd19aca26ad88cb5c07?v=a20acca876c2428380e5a2a33db233ed) を自分の Notion へ複製します
 3. 複製したページの URL の次の部分を `DATABASE_ID` としてメモします
-    * `https://notion.so/your-account/<ココ>?v=xxxx`
-    * 例) `158bd90116004cd19aca26ad88cb5c07`
+   - `https://notion.so/your-account/<ココ>?v=xxxx`
+   - 例) `158bd90116004cd19aca26ad88cb5c07`
 4. [Create an integration](https://developers.notion.com/docs#step-1-create-an-integration) からインテグレーションを作成し "Internal Integration Token" を `NOTION_API_SECRET` としてメモします
 5. 複製したページを再度開き [Share a database with your integration](https://developers.notion.com/docs#step-1-create-an-integration) の手順でインテグレーションにデータベースを共有します
 6. [vercel.com](https://vercel.com/) にログインします
@@ -119,14 +119,6 @@ See the [wiki](https://github.com/otoyo/easy-notion-blog/wiki/How-to-deploy-easy
 yarn lint
 yarn test
 ```
-
-HTML を変更した場合はスナップショットを更新してください。
-
-```
-yarn jest --updateSnapshot
-```
-
-- [Jest CLI オプション --updateSnapshot](https://jestjs.io/ja/docs/cli#--updatesnapshot)
 
 ## オプション設定
 

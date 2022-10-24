@@ -54,7 +54,7 @@ You can write on your Notion.
 1. Star this repo 😉
 2. Duplicate [the template](https://www.notion.so/otoyo/158bd90116004cd19aca26ad88cb5c07?v=a20acca876c2428380e5a2a33db233ed) into your Notion.
 3. Note the part of URL `https://notion.so/your-account/<HERE>?v=xxxx` as `DATABASE_ID`
-    * ex) `158bd90116004cd19aca26ad88cb5c07`
+   - ex) `158bd90116004cd19aca26ad88cb5c07`
 4. [Create an integration](https://developers.notion.com/docs#step-1-create-an-integration) and note "Internal Integration Token" as `NOTION_API_SECRET`
 5. [Share a database with your integration](https://developers.notion.com/docs#step-1-create-an-integration) in the previous database
 6. Go to [vercel.com](https://vercel.com/) and log-in with your account
@@ -112,14 +112,6 @@ See the [wiki](https://github.com/otoyo/easy-notion-blog/wiki/How-to-deploy-easy
 yarn lint
 yarn test
 ```
-
-Update the snapshot if you change HTML.
-
-```
-yarn jest --updateSnapshot
-```
-
-- [Jest CLI Options --updateSnapshot](https://jestjs.io/docs/cli#--updatesnapshot)
 
 ## Optional settings
 
