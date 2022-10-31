@@ -32,6 +32,7 @@ const Pdf = ({ block }) => {
     return (
       <div className={styles.pdf}>
         <iframe src={pdfdata} width='100%' height='100%'></iframe>
+        <a href={pdfdata} download='pdfdata.pdf'>PDFダウンロードリンク</a>
       </div>
     )
   } else {
