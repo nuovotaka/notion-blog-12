@@ -16,6 +16,7 @@ import {
   Callout,
   Embed,
   Video,
+  Pdf,
   Bookmark,
   LinkPreview,
   SyncedBlock,
@@ -566,6 +567,17 @@ function _buildBlock(item) {
       }
 
       block.Embed = embed
+      break
+    case 'pdf':
+      const pdf: Pdf = {
+        Type: item.pdf.type,
+      }
+
+      if (item.pdf.type === 'file') {
+        pdf.File = { Url: item.pdf.file.url }
+      }
+
+      block.Pdf = pdf
       break
     case 'bookmark':
       const bookmark: Bookmark = {
