@@ -145,6 +145,7 @@ export interface Embed {
 export interface Pdf {
   Type: string
   File?: File
+  External?: External
   Url?: string
   ExpiryTime?: string
 }
