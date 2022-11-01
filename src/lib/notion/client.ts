@@ -575,6 +575,8 @@ function _buildBlock(item) {
 
       if (item.pdf.type === 'file') {
         pdf.File = { Url: item.pdf.file.url }
+      } else {
+        pdf.External = { Url: item.pdf.external.url }
       }
 
       block.Pdf = pdf

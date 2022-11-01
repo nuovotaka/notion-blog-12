@@ -9,7 +9,7 @@ let uaModel
 let isMobile
 
 const Pdf = ({ block }) => {
-  if (/^https:\/\/s3\.us-west-2\.amazonaws\.com/.test(block.Pdf.File.Url)) {
+  if (block.Pdf.Type === 'file' && (/^https:\/\/s3\.us-west-2\.amazonaws\.com/.test(block.Pdf.File.Url))) {
 
     const url = new URL(block.Pdf.File.Url).href
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -53,7 +53,24 @@ const Pdf = ({ block }) => {
       </div>
     ))
   } else {
-    return null
+    const url = new URL(block.Pdf.External.Url).href
+    let matched: Array<string>
+    try {
+      matched = new URL(url).pathname.match(/\.pdf$/)
+    } catch (error) {
+      console.log(error)
+      return null
+    }
+
+    if (!matched) {
+      return null
+    }
+
+    return (
+      <div className={styles.pdf}>
+        <iframe src={url} width='100%' height='100%'></iframe>
+      </div>
+    )
   }
 }
 
