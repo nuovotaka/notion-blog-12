@@ -5,7 +5,6 @@ import { UAParser } from 'ua-parser-js'
 
 import styles from '../../styles/notion-block.module.css'
 
-let uaType
 let uaModel
 let isMobile
 
@@ -19,9 +18,8 @@ const Pdf = ({ block }) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
       const uaParserResult = UAParser(window.navigator.userAgent)
-      uaType = uaParserResult.device.type
-      uaModel = uaParserResult.device.model
-      if (uaType === 'mobile' || uaType === 'tablet' || uaModel ==='iPad') {
+      uaModel = uaParserResult.ua.toLowerCase()
+      if (/android|ipod|ipad|iphone|macintosh/.test(uaModel) && 'ontouchend' in document) {
         isMobile = true
       } else {
         isMobile = false
