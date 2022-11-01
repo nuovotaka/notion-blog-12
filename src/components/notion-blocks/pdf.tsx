@@ -6,6 +6,7 @@ import { UAParser } from 'ua-parser-js'
 import styles from '../../styles/notion-block.module.css'
 
 let uaType
+let uaModel
 let isMobile
 
 const Pdf = ({ block }) => {
@@ -19,7 +20,8 @@ const Pdf = ({ block }) => {
     useEffect(() => {
       const uaParserResult = UAParser(window.navigator.userAgent)
       uaType = uaParserResult.device.type
-      if (uaType === 'mobile' || uaType === 'tablet') {
+      uaModel = uaParserResult.device.model
+      if (uaType === 'mobile' || uaType === 'tablet' || uaModel ==='iPad') {
         isMobile = true
       } else {
         isMobile = false
