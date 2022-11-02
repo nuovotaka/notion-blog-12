@@ -11,7 +11,6 @@ const GoogleMapsEmbed = ({ block }) => {
     }
 
     if (new URL(url).hostname.match(/goo\.gl/)) {
-        console.log("goo maps")
         return <Bookmark block={block} />
     }
 
