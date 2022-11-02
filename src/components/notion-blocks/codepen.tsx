@@ -18,7 +18,7 @@ const CodepenEmbedded = ({ url }) => {
 
   return (
 		<div className={styles.codepenembed}>
-			<Codepen hash={matched[2]} user={matched[1]} />
+			<Codepen height={450} hash={matched[2]} user={matched[1]} />
 		</div>
 	)
 }
