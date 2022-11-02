@@ -69,3 +69,11 @@ export const parseYouTubeVideoId = (url: URL): string => {
 
   return ''
 }
+
+export const isGoogleMapsURL = (url: URL): boolean => {
+  url = new URL(url)
+  if (['www.google.com', 'goo.gl'].includes(url.hostname) && (url.pathname).match(/^\/maps\//)) {
+    return true
+  }
+  return false
+}

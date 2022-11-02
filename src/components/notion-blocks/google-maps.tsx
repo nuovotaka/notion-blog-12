@@ -1,8 +1,19 @@
 import React from 'react'
+import { isGoogleMapsURL } from '../../lib/blog-helpers'
 
 import styles from '../../styles/notion-block.module.css'
+import Bookmark from './bookmark'
 
-const GoogleMapsEmbed = ({url}) => {
+const GoogleMapsEmbed = ({ block }) => {
+    const url = block.Embed.Url
+    if (!isGoogleMapsURL(url)) {
+        return null
+    }
+
+    if (new URL(url).hostname.match(/goo\.gl/)) {
+        console.log("goo maps")
+        return <Bookmark block={block} />
+    }
 
     return (
         <iframe className={styles.googlemapsEmbed}
