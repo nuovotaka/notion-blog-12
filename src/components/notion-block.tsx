@@ -93,10 +93,13 @@ const Childpage = ({ block }) => {
   const title = block.Childpage.Title
   return (
     <div className={styles.childpage}>
-      {title}
-      {block.HasChildren ? (
-        <NotionBlocks blocks={block.Childpage.Children} />
-      ) : null }
+      <input id='check' type='checkbox' ></input>
+      <label htmlFor='check'>{title}</label>
+        {block.HasChildren ? (
+          <p className={styles.childpage_children}>
+            <NotionBlocks blocks={block.Childpage.Children} />
+          </p>
+        ) : null }
     </div>
   )
 }

@@ -315,6 +315,28 @@
 }
 
 .childpage {
-  background-color: #eee;
   margin-left: 1rem;
+}
+.childpage > input {
+  display: none;
+}
+
+.childpage > label {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #eee;
+}
+
+.childpage_children {
+  display: none;
+  height: 0;
+  overflow: hidden;
+  background-color: #ddd;
+  transition: max-height 0.3s;
+}
+
+.childpage input:checked + label + .childpage_children {
+  display: block;
+  height: 100vh;
+  padding: 20px;
 }
