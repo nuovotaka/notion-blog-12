@@ -89,6 +89,21 @@ const colorClass = (color: string) => {
   return null
 }
 
+const Childpage = ({ block }) => {
+  const title = block.Childpage.Title
+  return (
+    <div className={styles.childpage}>
+      <input id='check' type='checkbox' ></input>
+      <label htmlFor='check'>{title}</label>
+        {block.HasChildren ? (
+          <p className={styles.childpage_children}>
+            <NotionBlocks blocks={block.Childpage.Children} />
+          </p>
+        ) : null }
+    </div>
+  )
+}
+
 const Paragraph = ({ block }) => (
   <p className={colorClass(block.Paragraph.Color)}>
     {block.Paragraph.RichTexts.map((richText: interfaces.RichText, i: number) => (
@@ -340,7 +355,9 @@ const Toggle = ({ block }) => (
 )
 
 const NotionBlock = ({ block, blocks }) => {
-  if (block.Type === 'paragraph') {
+  if (block.Type === 'child_page') {
+    return <Childpage block={block} />
+  } else if (block.Type === 'paragraph') {
     return <Paragraph block={block} />
   } else if (block.Type === 'heading_1') {
     return <Heading1 block={block} />
