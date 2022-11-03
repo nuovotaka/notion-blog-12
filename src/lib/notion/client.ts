@@ -2,6 +2,7 @@ import { NOTION_API_SECRET, DATABASE_ID } from './server-constants'
 import {
   Post,
   Block,
+  Childpage,
   Paragraph,
   Heading1,
   Heading2,
@@ -405,6 +406,8 @@ export async function getAllBlocksByBlockId(blockId: string) {
       block.SyncedBlock.Children = await _getSyncedBlockChildren(block)
     } else if (block.Type === 'toggle') {
       block.Toggle.Children = await getAllBlocksByBlockId(block.Id)
+    } else if (block.Type === 'child_page' && block.HasChildren) {
+      block.Childpage.Children = await getAllBlocksByBlockId(block.Id)
     }
   }
 
@@ -419,6 +422,14 @@ function _buildBlock(item) {
   }
 
   switch (item.type) {
+    case 'child_page':
+      const childpage: Childpage = {
+        Title: item.child_page.title,
+        Children: [],
+      }
+
+      block.Childpage = childpage
+      break
     case 'paragraph':
       const paragraph: Paragraph = {
         RichTexts: item.paragraph.rich_text.map(_buildRichText),
