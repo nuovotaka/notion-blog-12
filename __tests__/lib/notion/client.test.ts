@@ -139,17 +139,17 @@ describe('getAllBlocksByBlockId', () => {
     expect(heading3).toMatchObject(expected)
   })
 
-  it('resolves bulleted_list_item block', async () => {
+  it('resolves bulleted_list_blockObject block', async () => {
     const expected: Block[] = [
       {
         Id: '071398ed-89a4-41a4-a750-2bc247969ba8',
-        Type: 'bulleted_list_item',
+        Type: 'bulleted_list_blockObject',
         HasChildren: false,
-        BulletedListItem: {
+        BulletedListblockObject: {
           RichTexts: [
             {
               Annotation: annotation,
-              PlainText: 'Bulleted List Item 1'
+              PlainText: 'Bulleted List blockObject 1'
             }
           ],
           Color: 'default',
@@ -157,13 +157,13 @@ describe('getAllBlocksByBlockId', () => {
       },
       {
         Id: '9c3ce9a5-5f9f-47b1-95c7-acd0034958a7',
-        Type: 'bulleted_list_item',
+        Type: 'bulleted_list_blockObject',
         HasChildren: false,
-        BulletedListItem: {
+        BulletedListblockObject: {
           RichTexts: [
             {
               Annotation: annotation,
-              PlainText: 'Bulleted List Item 2'
+              PlainText: 'Bulleted List blockObject 2'
             }
           ],
           Color: 'default',
@@ -172,21 +172,21 @@ describe('getAllBlocksByBlockId', () => {
     ]
 
     const blocks = await getAllBlocksByBlockId(pageBlockId)
-    const bulletedListItems = blocks.filter((block: Block) => block.Type === 'bulleted_list_item')
-    expect(bulletedListItems).toMatchObject(expected)
+    const bulletedListblockObjects = blocks.filter((block: Block) => block.Type === 'bulleted_list_blockObject')
+    expect(bulletedListblockObjects).toMatchObject(expected)
   })
 
-  it('resolves numbered_list_item block', async () => {
+  it('resolves numbered_list_blockObject block', async () => {
     const expected: Block[] = [
       {
         Id: 'b5cb3105-db27-48fd-8965-d5f3083b7fdf',
-        Type: 'numbered_list_item',
+        Type: 'numbered_list_blockObject',
         HasChildren: false,
-        NumberedListItem: {
+        NumberedListblockObject: {
           RichTexts: [
             {
               Annotation: annotation,
-              PlainText: 'Numbered List Item 1'
+              PlainText: 'Numbered List blockObject 1'
             }
           ],
           Color: 'default',
@@ -194,13 +194,13 @@ describe('getAllBlocksByBlockId', () => {
       },
       {
         Id: 'e6077145-ccbe-4440-938b-0feaa60857ee',
-        Type: 'numbered_list_item',
+        Type: 'numbered_list_blockObject',
         HasChildren: false,
-        NumberedListItem: {
+        NumberedListblockObject: {
           RichTexts: [
             {
               Annotation: annotation,
-              PlainText: 'Numbered List Item 2'
+              PlainText: 'Numbered List blockObject 2'
             }
           ],
           Color: 'default',
@@ -209,8 +209,8 @@ describe('getAllBlocksByBlockId', () => {
     ]
 
     const blocks = await getAllBlocksByBlockId(pageBlockId)
-    const numberedListItems = blocks.filter((block: Block) => block.Type === 'numbered_list_item')
-    expect(numberedListItems).toMatchObject(expected)
+    const numberedListblockObjects = blocks.filter((block: Block) => block.Type === 'numbered_list_blockObject')
+    expect(numberedListblockObjects).toMatchObject(expected)
   })
 
   it('resolves to_do block', async () => {
@@ -248,8 +248,8 @@ describe('getAllBlocksByBlockId', () => {
     ]
 
     const blocks = await getAllBlocksByBlockId(pageBlockId)
-    const toDoItems = blocks.filter((block: Block) => block.Type === 'to_do')
-    expect(toDoItems).toMatchObject(expected)
+    const toDoblockObjects = blocks.filter((block: Block) => block.Type === 'to_do')
+    expect(toDoblockObjects).toMatchObject(expected)
   })
 
   it('resolves video block', async () => {
