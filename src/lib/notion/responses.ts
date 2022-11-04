@@ -413,6 +413,7 @@ interface Code {
 
 interface ChildPage {
   title: string
+  children?: BlockObject[]
 }
 
 interface ChildDatabase {

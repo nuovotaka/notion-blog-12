@@ -14,7 +14,7 @@ export interface Block {
   Type: string
   HasChildren: boolean
 
-  Childpage?: Childpage
+  ChildPage?: ChildPage
   Paragraph?: Paragraph
   Heading1?: Heading1
   Heading2?: Heading2
@@ -39,7 +39,7 @@ export interface Block {
   TableOfContents?: TableOfContents
 }
 
-export interface Childpage {
+export interface ChildPage {
   Title: string
   Children: Block[]
 }

@@ -89,15 +89,15 @@ const colorClass = (color: string) => {
   return null
 }
 
-const Childpage = ({ block }) => {
-  const title = block.Childpage.Title
+const ChildPage = ({ block }) => {
+  const title = block.ChildPage.Title
   return (
     <div className={styles.childpage}>
       <input id='check' type='checkbox' ></input>
       <label htmlFor='check'>{title}</label>
         {block.HasChildren ? (
           <p className={styles.childpage_children}>
-            <NotionBlocks blocks={block.Childpage.Children} />
+            <NotionBlocks blocks={block.ChildPage.Children} />
           </p>
         ) : null }
     </div>
@@ -356,7 +356,7 @@ const Toggle = ({ block }) => (
 
 const NotionBlock = ({ block, blocks }) => {
   if (block.Type === 'child_page') {
-    return <Childpage block={block} />
+    return <ChildPage block={block} />
   } else if (block.Type === 'paragraph') {
     return <Paragraph block={block} />
   } else if (block.Type === 'heading_1') {
