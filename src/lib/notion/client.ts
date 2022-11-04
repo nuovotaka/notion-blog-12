@@ -512,7 +512,7 @@ function _buildBlock(blockObject: responses.BlockObject): Block {
       if (blockObject.image.type === 'external') {
         image.External = { Url: blockObject.image.external.url }
       } else {
-        image.File = { Url: blockObject.image.file.url, ExpiryTime: item.image.file.expiry_time }
+        image.File = { Url: blockObject.image.file.url, ExpiryTime: blockObject.image.file.expiry_time }
       }
 
       block.Image = image
