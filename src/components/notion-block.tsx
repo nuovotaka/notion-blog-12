@@ -96,9 +96,9 @@ const ChildPage = ({ block }) => {
       <input id='check' type='checkbox' ></input>
       <label htmlFor='check'>{title}</label>
         {block.HasChildren ? (
-          <p className={styles.childpage_children}>
+          <div className={styles.childpage_children}>
             <NotionBlocks blocks={block.ChildPage.Children} />
-          </p>
+          </div>
         ) : null }
     </div>
   )
