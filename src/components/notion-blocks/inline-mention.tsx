@@ -7,17 +7,16 @@ const InlineMention = ({ mention }) => {
 	const type: string = mention.Mention.Type
 
 	let date: string
-	let src: any
+	let text: string
 	if (type === 'page') {
 		if (!mention.PlainText) {
 			return null
 		} else {
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
-			src = mention.Href
+			text = mention.PlainText
 
 			return (
 				<span className={styles.inlinemention}>
-					<a href="">{mention.PlainText}</a>
+					{text}
 				</span>
 			)
 		}
