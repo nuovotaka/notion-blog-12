@@ -9,6 +9,7 @@ const Video = dynamic(() => import('./notion-blocks/video'))
 const InlineEquation = dynamic(() => import('./notion-blocks/inline-equation'))
 const BlockEquation = dynamic(() => import('./notion-blocks/block-equation'))
 const Pdf = dynamic(() => import('./notion-blocks/pdf'))
+const InlineMention = dynamic(() => import('./notion-blocks/inline-mention'))
 
 import styles from '../styles/notion-block.module.css'
 
@@ -19,7 +20,7 @@ const RichText = ({ richText }) => {
   } else if (richText.Equation) {
     element = <InlineEquation equation={richText.Equation} />
   } else {
-    element = null
+    element = <InlineMention mention={richText} />
   }
 
   if (richText.Annotation.Bold) {
