@@ -1,6 +1,3 @@
-import { format } from 'date-fns'
-import { MdTimer } from 'react-icons/md'
-
 import styles from '../../styles/notion-block.module.css'
 
 const InlineMention = ({ mention }) => {
