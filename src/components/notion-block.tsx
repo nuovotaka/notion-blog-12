@@ -43,7 +43,7 @@ const RichText = ({ richText }) => {
   if (richText.Annotation.Code) {
     element = <code>{element}</code>
   }
-  if (richText.Href) {
+  if (!richText.Mention && richText.Href) {
     element = <a href={richText.Href}>{element}</a>
   }
 
