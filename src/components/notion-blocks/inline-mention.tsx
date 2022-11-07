@@ -5,7 +5,7 @@ import styles from '../../styles/notion-block.module.css'
 
 const InlineMention = ({ mention }) => {
 	const type: string = mention.Mention.Type
-
+console.log(type)
 	let date: string
 	let text: string
 	if (type === 'page') {
@@ -27,6 +27,12 @@ const InlineMention = ({ mention }) => {
 			<span className={styles.inlinemention}>
 				{date} <MdTimer size={20}/>
 			</span>
+		)
+	} else if (type === 'user') {
+		text = mention.PlainText
+
+		return (
+			<span>{text}</span>
 		)
 	} else {
 		return null
