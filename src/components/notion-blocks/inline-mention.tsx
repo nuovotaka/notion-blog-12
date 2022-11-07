@@ -5,26 +5,21 @@ import styles from '../../styles/notion-block.module.css'
 
 const InlineMention = ({ mention }) => {
 	const type: string = mention.Mention.Type
-	let text: string
 	if (type === 'page') {
-		if (!mention.PlainText) {
+		if (!mention.PlainText || mention.PlainText === 'Untitled') {
 			return null
 		} else {
-			text = mention.PlainText
-
 			return (
 				<span className={styles.inlinemention}>
-					{text}
+					{mention.PlainText}
 				</span>
 			)
 		}
 	} else if (type === 'date') {
 		return null
 	} else if (type === 'user') {
-		text = mention.PlainText
-
 		return (
-			<span>{text}</span>
+			<span>{mention.PlainText}</span>
 		)
 	} else {
 		return null
