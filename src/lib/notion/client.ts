@@ -33,6 +33,7 @@ import {
   RichText,
   Text,
   Annotation,
+  Mention,
 } from './interfaces'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { Client } = require('@notionhq/client')
@@ -850,6 +851,30 @@ function _buildRichText(richTextObject: responses.RichTextObject): RichText {
       Expression: richTextObject.equation.expression,
     }
     richText.Equation = equation
+  } else if (richTextObject.type === 'mention') {
+    if (richTextObject.mention.type === 'page') {
+      const mention: Mention = {
+        Type: richTextObject.mention.type
+      }
+      mention.Page = {
+        Id: richTextObject.mention.page.id
+      }
+      richText.Mention = mention
+    } else if (richTextObject.mention.type === 'date') {
+      const mention: Mention = {
+        Type: richTextObject.mention.type
+      }
+      mention.Date = {
+        Start: richTextObject.mention.date.start,
+        End: richTextObject.mention.date.end,
+      }
+      richText.Mention = mention
+    } else {
+      const mention: Mention = {
+        Type: richTextObject.mention.type
+      }
+      richText.Mention = mention
+    }
   }
 
   return richText

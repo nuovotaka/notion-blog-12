@@ -208,6 +208,7 @@ export interface RichText {
   PlainText: string
   Href?: string
   Equation?: Equation
+  Mention?: Mention
 }
 
 export interface Text {
@@ -230,4 +231,20 @@ export interface Annotation {
 
 export interface Link {
   Url: string
+}
+
+export interface Mention {
+  Type: string
+  Page?: MentionPage
+  Date?: MentionDate
+  LinkPreview?: LinkPreview
+}
+
+export interface MentionPage {
+  Id: string
+}
+
+export interface MentionDate {
+  Start?: string
+  End?: null|string
 }
