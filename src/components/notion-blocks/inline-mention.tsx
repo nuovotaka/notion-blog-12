@@ -5,7 +5,6 @@ import styles from '../../styles/notion-block.module.css'
 
 const InlineMention = ({ mention }) => {
 	const type: string = mention.Mention.Type
-console.log(type)
 	let date: string
 	let text: string
 	if (type === 'page') {
