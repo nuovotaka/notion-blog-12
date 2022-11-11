@@ -46,6 +46,7 @@
   width: 30%;
   margin: 1rem auto 0;
   border: 1px solid var(--accents-2);
+  border-radius: 100vh;
   color: inherit;
   font-size: 0.85rem;
   text-align: center;
@@ -114,18 +115,19 @@
   font-size: 1.1rem;
 }
 .blogTagLink ul {
-  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
   padding: 0;
   margin-top: 0.3rem;
 }
 .blogTagLink ul li {
-  position: relative;
+  box-sizing: border-box;
+  border-width: 0;
   font-size: 1rem;
-  padding: 0.4rem 0;
-  padding-left: 0.7rem;
-  line-height: 1.2rem;
+  margin: 4px;
 }
-.blogTagLink ul li:before {
+/* .blogTagLink ul li:before {
   border-radius: 50%;
   width: 5px;
   height: 5px;
@@ -135,6 +137,12 @@
   top: 0.9rem;
   content: '';
   background: #333;
+} */
+.blogTagLink ul li a {
+  border: 1px solid var(--accents-1);
+  border-radius: 100vh;
+  padding: 1px 10px;
+  display: list-item;
 }
 
 .postsNotFound {
