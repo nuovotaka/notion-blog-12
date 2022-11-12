@@ -5,10 +5,12 @@ import styles from '../styles/mystyles.module.css'
 const buildHeadingId = heading => heading.RichTexts.map((richText: interfaces.RichText) => richText.Text.Content).join().trim()
 
 const TocLink = ({ blocks }) => {
+  const istoc = blocks.filter((b: interfaces.Block) => b.Type === 'table_of_contents')
 	const headings = blocks.filter((b: interfaces.Block) => b.Type === 'heading_1' || b.Type === 'heading_2' || b.Type === 'heading_3')
+
   return (
     <div className={styles.subtableOfContents}>
-			<div>▼ 目次</div>
+			{!(istoc.length === 0) ? <div>▼ 目次</div> : null }
       {headings.map((headingBlock: interfaces.Block) => {
         const heading = headingBlock.Heading1 || headingBlock.Heading2 || headingBlock.Heading3
 
