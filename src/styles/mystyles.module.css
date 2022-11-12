@@ -66,3 +66,32 @@
   float: left;
   width: 25%;
 }
+
+.subtableOfContents {
+  display: none;
+}
+@media (min-width: 600px) {
+  .subtableOfContents {
+    display: block;
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
+.subtableOfContents > a {
+  display: block;
+  color: inherit;
+  line-height: 1.8rem;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+.subtableOfContents > a:hover {
+  background: rgba(241, 241, 239, 1) !important;
+}
+.subtableOfContents > a.indent-1 {
+  padding-left: 1.5rem;
+}
+.subtableOfContents > a.indent-2 {
+  padding-left: 3rem;
+}
