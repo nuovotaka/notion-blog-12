@@ -8,9 +8,12 @@ const TocLink = ({ blocks }) => {
   const istoc = blocks.filter((b: interfaces.Block) => b.Type === 'table_of_contents')
 	const headings = blocks.filter((b: interfaces.Block) => b.Type === 'heading_1' || b.Type === 'heading_2' || b.Type === 'heading_3')
 
+  if (istoc.length === 0) {
+    return null
+  }
   return (
     <div className={styles.subtableOfContents}>
-			{!(istoc.length === 0) ? <div>▼ 目次</div> : null }
+			<div>▼ 目次</div>
       {headings.map((headingBlock: interfaces.Block) => {
         const heading = headingBlock.Heading1 || headingBlock.Heading2 || headingBlock.Heading3
 
