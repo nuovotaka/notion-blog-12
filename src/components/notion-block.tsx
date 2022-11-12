@@ -141,6 +141,7 @@ const TableOfContents = ({ block, blocks }) => {
   const headings = blocks.filter((b: interfaces.Block) => b.Type === 'heading_1' || b.Type === 'heading_2' || b.Type === 'heading_3')
   return (
     <div className={styles.tableOfContents}>
+      <div>▼ 目次</div>
       {headings.map((headingBlock: interfaces.Block) => {
         const heading = headingBlock.Heading1 || headingBlock.Heading2 || headingBlock.Heading3
 
