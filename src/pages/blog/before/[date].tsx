@@ -15,9 +15,9 @@ import {
   PostsNotFound,
   ReadMoreLink,
 } from '../../../components/blog-parts'
-import styles from '../../../styles/blog.module.css'
+import styles from '../../../styles/blog.module.scss'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Mystyles from '../../../styles/mystyles.module.css'
+import Mystyles from '../../../styles/mystyles.module.scss'
 
 import { getBeforeLink } from '../../../lib/blog-helpers'
 import {

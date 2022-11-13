@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Mystyles from '../styles/mystyles.module.css'
+import Mystyles from '../styles/mystyles.module.scss'
 import { FaHome, FaUser, FaLink } from 'react-icons/fa'
 import { MdPrivacyTip } from 'react-icons/md'
 import Link from 'next/link'

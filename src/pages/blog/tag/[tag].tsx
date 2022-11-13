@@ -14,7 +14,7 @@ import {
   PostsNotFound,
   ReadMoreLink,
 } from '../../../components/blog-parts'
-import styles from '../../../styles/blog.module.css'
+import styles from '../../../styles/blog.module.scss'
 import { getTagLink } from '../../../lib/blog-helpers'
 import { useEffect } from 'react'
 import {

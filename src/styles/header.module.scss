@@ -1,0 +1,43 @@
+.header {
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+
+  h1 {
+    padding: 0.5rem 0;
+    font-weight: 400;
+    color: #000;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: inherit;
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+
+    li {
+      display: block;
+      padding: 0 15px;
+
+      :global(a.active) {
+        color: var(--accents-3);
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .header ul {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 429px) {
+  .header ul li {
+    display: inline-block;
+  }
+}

@@ -1,6 +1,6 @@
 import DocumentHead from '../../components/document-head'
 
-import styles from '../../styles/page.module.css'
+import styles from '../../styles/page.module.scss'
 
 const RenderPage = () => (
   <div className={styles.container}>

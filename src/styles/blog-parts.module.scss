@@ -1,0 +1,186 @@
+.postDate {
+  padding: 0 0 0.3rem;
+  font-size: 0.9rem;
+}
+
+.postTags {
+  font-size: 0.9rem;
+
+  a {
+    padding-right: 0.8rem;
+  }
+}
+
+.postTitle {
+  font-size: 1.6rem;
+  color: var(--fg);
+
+  a {
+    font-size: 1.2rem;
+    color: inherit;
+  }
+}
+
+@media (max-width: 600px) {
+  .postTitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .postTitle a {
+    font-size: 1.15rem;
+  }
+}
+
+.postExcerpt {
+  padding: 0.4rem 0;
+  font-size: 1rem;
+}
+
+.postBody {
+  padding: 0.5rem 0;
+}
+
+.readMoreLink {
+  color: var(--fg);
+
+  a {
+    display: block;
+    width: 30%;
+    margin: 1rem auto 0;
+    border: 1px solid var(--accents-2);
+    border-radius: 100vh;
+    color: inherit;
+    font-size: 0.85rem;
+    text-align: center;
+    line-height: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .readMoreLink a {
+    width: 50%;
+  }
+}
+
+.nextPageLink {
+  color: var(--fg);
+  text-align: right;
+
+  a {
+    width: 30%;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .nextPageLink a {
+    width: 50%;
+  }
+}
+
+.noContents {}
+
+.blogPostLink {
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0.3rem;
+
+    li {
+      position: relative;
+      font-size: 0.95rem;
+      padding: 0.4rem 0;
+      padding-left: 0.7rem;
+      line-height: 1.2rem;
+
+      &:before {
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0.9rem;
+        content: '';
+        background: #333;
+      }
+    }
+  }
+}
+
+.blogTagLink {
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin-top: 0.3rem;
+
+    li {
+      box-sizing: border-box;
+      border-width: 0;
+      font-size: 1rem;
+      margin: 4px;
+
+      a {
+        border: 1px solid var(--accents-1);
+        border-radius: 100vh;
+        padding: 1px 10px;
+        display: list-item;
+      }
+    }
+  }
+}
+
+/* .blogTagLink ul li:before {
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0.9rem;
+  content: '';
+  background: #333;
+} */
+
+.postsNotFound {}
+
+@media (max-width: 600px) {
+  .tag {
+    font-size: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .post {
+    a.expandButton {
+      width: 50%;
+    }
+
+    .caption {
+      font-size: 0.9rem;
+    }
+  }
+
+  .nextContainer {
+    padding: 0;
+
+    a.nextButton {
+      width: 50%;
+    }
+  }
+}
