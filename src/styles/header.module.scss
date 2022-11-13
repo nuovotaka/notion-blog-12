@@ -1,3 +1,5 @@
+@use "mixin" as m;
+
 .header {
   display: block;
   padding: 15px 0;
@@ -18,26 +20,20 @@
     margin: inherit;
     padding: 0.5rem 0;
     font-size: 1.1rem;
+    @include m.mq(enb) {
+      font-size: 1rem;
+    }
 
     li {
       display: block;
+      @include m.mq(tab) {
+        display: inline-block;
+      }
       padding: 0 15px;
 
       :global(a.active) {
         color: var(--accents-3);
       }
     }
-  }
-}
-
-@media (max-width: 600px) {
-  .header ul {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 429px) {
-  .header ul li {
-    display: inline-block;
   }
 }
