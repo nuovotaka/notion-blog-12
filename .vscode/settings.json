@@ -1,4 +1,6 @@
 {
     "cSpell.words": [
-    ]
+    ],
+    "dartsass.targetDirectory": "css/",
+    "dartsass.outputFormat": "cssonly"
 }
