@@ -1,3 +1,5 @@
+@use "mixin" as m;
+
 .font-bold {
   font-weight: bold;
 }
@@ -21,23 +23,17 @@
 
 .bottomNavLink {
   display: inline-block;
-}
-
-@media (min-width: 429px) {
-  .bottomNavLink {
+  @include m.mq(tab) {
     display: none;
-  }
-}
-
-@media (max-width: 428px) {
-  .footer {
-    margin-bottom: 60px;
   }
 }
 
 .footer {
   display: block;
   text-align: center;
+  @include m.mq(sp) {
+    margin-bottom: 60px;
+  }
 
   ul {
     list-style: none;
@@ -67,6 +63,13 @@
 
 .subtableOfContents {
   display: none;
+  @include m.mq(tab) {
+    display: block;
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
 
   >a {
     display: block;
@@ -86,15 +89,5 @@
     &.indent-2 {
       padding-left: 3rem;
     }
-  }
-}
-
-@media (min-width: 600px) {
-  .subtableOfContents {
-    display: block;
-    position: sticky;
-    top: 0;
-    max-height: 100vh;
-    overflow-y: auto;
   }
 }

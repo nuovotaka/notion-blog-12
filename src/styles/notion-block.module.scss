@@ -1,3 +1,5 @@
+@use "mixin" as m;
+
 .divider {}
 
 .caption {
@@ -184,6 +186,9 @@
 
 .columnList {
   display: flex;
+  @include m.mq(enb2) {
+    display: block;
+  }
   width: 100%;
   margin: 1rem auto;
   gap: 0 1rem;
@@ -191,14 +196,7 @@
   >div {
     flex: 1 1 180px;
     width: 180px;
-  }
-}
-
-@media (max-width: 640px) {
-  .columnList {
-    display: block;
-
-    >div {
+    @include m.mq(enb2) {
       width: 100%;
     }
   }
@@ -296,6 +294,9 @@
       &:last-child {
         flex: 1 1 180px;
         position: relative;
+        @include m.mq(enb2) {
+          display: none;
+        }
 
         >img {
           position: absolute !important;
@@ -305,12 +306,6 @@
         }
       }
     }
-  }
-}
-
-@media (max-width: 640px) {
-  .bookmark>a>div:last-child {
-    display: none;
   }
 }
 

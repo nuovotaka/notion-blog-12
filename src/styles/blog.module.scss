@@ -1,17 +1,18 @@
+@use "mixin" as m;
+
 .container {
   display: flex;
-  justify-content: space-between;
-}
-
-@media (max-width: 600px) {
-  .container {
+  @include m.mq(enb) {
     display: block;
   }
+  justify-content: space-between;
 }
 
 .mainContent {
   width: 60%;
-
+  @include m.mq(enb) {
+    width: 100%;
+  }
   header {
     padding: 0 0 20px;
     text-align: center;
@@ -20,28 +21,16 @@
   footer {
     border-top: 1px dashed #888;
     margin: 0 auto;
+    @include m.mq(enb) {
+      margin: 0 auto 40px;
+    }
     padding: 40px 0 0;
-  }
-}
-
-@media (max-width: 600px) {
-  .mainContent {
-    width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .mainContent footer {
-    margin: 0 auto 40px;
   }
 }
 
 .subContent {
   width: 35%;
-}
-
-@media (max-width: 600px) {
-  .subContent {
+  @include m.mq(enb) {
     width: 100%;
   }
 }

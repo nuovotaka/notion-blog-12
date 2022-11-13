@@ -1,3 +1,5 @@
+@use "mixin" as m;
+
 .postDate {
   padding: 0 0 0.3rem;
   font-size: 0.9rem;
@@ -13,23 +15,17 @@
 
 .postTitle {
   font-size: 1.6rem;
+  @include m.mq(enb) {
+    font-size: 1.2rem;
+  }
   color: var(--fg);
 
   a {
     font-size: 1.2rem;
+    @include m.mq(enb) {
+      font-size: 1.15rem;
+    }
     color: inherit;
-  }
-}
-
-@media (max-width: 600px) {
-  .postTitle {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .postTitle a {
-    font-size: 1.15rem;
   }
 }
 
@@ -48,6 +44,9 @@
   a {
     display: block;
     width: 30%;
+    @include m.mq(enb) {
+      width: 50%;
+    }
     margin: 1rem auto 0;
     border: 1px solid var(--accents-2);
     border-radius: 100vh;
@@ -58,27 +57,18 @@
   }
 }
 
-@media (max-width: 600px) {
-  .readMoreLink a {
-    width: 50%;
-  }
-}
-
 .nextPageLink {
   color: var(--fg);
   text-align: right;
 
   a {
     width: 30%;
+    @include m.mq(enb) {
+      width: 50%;
+    }
     margin: 0 auto;
     font-size: 1rem;
     line-height: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .nextPageLink a {
-    width: 50%;
   }
 }
 
