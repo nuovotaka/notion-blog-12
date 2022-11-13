@@ -28,7 +28,7 @@ import {
   getAllTags,
   getAllBlocksByBlockId,
 } from '../../lib/notion/client'
-import Toc from '../../components/toc'
+import TocLink from '../../components/toc'
 
 export async function getStaticProps({ params: { slug } }) {
   const post = await getPostBySlug(slug)
@@ -161,7 +161,7 @@ const RenderPost = ({
         <BlogPostLink heading="Recommended" posts={rankedPosts} />
         <BlogPostLink heading="Latest posts" posts={recentPosts} />
         <BlogTagLink heading="Categories" tags={tags} />
-        <Toc blocks={blocks}/>
+        <TocLink blocks={blocks}/>
       </div>
     </div>
   )
