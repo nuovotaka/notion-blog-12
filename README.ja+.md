@@ -17,3 +17,4 @@ notion-blog は、easy-notion-blog を使って簡単に開設された Blog で
 - リストの階層表示は、箇条書きの階層下に ToDo リスト(一例)を表示できるなどの変更を加えた。
 - 動画は、YouTube だけでなく Vimeo も対応。
 - 音楽は、Spotify に対応。
+- メンションは、表示のみ。
