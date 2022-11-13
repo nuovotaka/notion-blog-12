@@ -1,4 +1,4 @@
-import styles from '../../styles/notion-block.module.css'
+import styles from '../../styles/notion-block.module.scss'
 
 const InlineMention = ({ mention }) => {
 	const type: string = mention.Mention.Type

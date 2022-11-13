@@ -10,7 +10,7 @@ import {
 } from 'react-share'
 
 import * as gtag from '../lib/gtag'
-import styles from '../styles/social-buttons.module.css'
+import styles from '../styles/social-buttons.module.scss'
 
 const SocialButtons = ({ title = '', url, id = null }) => (
   <ul className={styles.socialButtons}>

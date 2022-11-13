@@ -2,7 +2,7 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import { SourceProps } from 'react-player/base'
 
-import styles from '../../styles/notion-block.module.css'
+import styles from '../../styles/notion-block.module.scss'
 
 const Video = ({ block }) => {
   const block_type = block.Video.Type

@@ -1,6 +1,6 @@
 import * as interfaces from '../lib/notion/interfaces'
 
-import styles from '../styles/mystyles.module.css'
+import styles from '../styles/mystyles.module.scss'
 
 const buildHeadingId = heading => heading.RichTexts.map((richText: interfaces.RichText) => richText.Text.Content).join().trim()
 

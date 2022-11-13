@@ -3,8 +3,8 @@ import { Config } from '../utils/Config'
 
 import BottomNav from './bottom-nav'
 
-import styles from '../styles/footer.module.css'
-import Mystyles from '../styles/mystyles.module.css'
+import styles from '../styles/footer.module.scss'
+import Mystyles from '../styles/mystyles.module.scss'
 
 const Footer = () => (
   <footer className={styles.footer}>

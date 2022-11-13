@@ -10,7 +10,7 @@ import {
   getTagLink,
   getTagBeforeLink,
 } from '../lib/blog-helpers'
-import styles from '../styles/blog-parts.module.css'
+import styles from '../styles/blog-parts.module.scss'
 
 export const PostDate = ({ post }) => (
   <div className={styles.postDate}>

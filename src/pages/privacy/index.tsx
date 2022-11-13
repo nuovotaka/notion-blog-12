@@ -1,7 +1,7 @@
 import DocumentHead from '../../components/document-head'
-import styles from '../../styles/page.module.css'
+import styles from '../../styles/page.module.scss'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Mystyles from '../../styles/mystyles.module.css'
+import Mystyles from '../../styles/mystyles.module.scss'
 
 const RenderPage = () => (
   <div className={styles.container}>

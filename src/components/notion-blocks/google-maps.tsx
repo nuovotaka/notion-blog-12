@@ -1,7 +1,7 @@
 import React from 'react'
 import { isGoogleMapsURL } from '../../lib/blog-helpers'
 
-import styles from '../../styles/notion-block.module.css'
+import styles from '../../styles/notion-block.module.scss'
 import Bookmark from './bookmark'
 
 const GoogleMapsEmbed = ({ block }) => {

@@ -1,4 +1,4 @@
-import '../styles/global.css'
+import '../styles/global.scss'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
@@ -8,8 +8,8 @@ import Footer from '../components/footer'
 import GoogleAnalytics from '../components/google-analytics'
 import GoogleADS from '../components/google-ads'
 
-import '../styles/syntax-coloring.css'
-import styles from '../styles/shared.module.css'
+import '../styles/syntax-coloring.scss'
+import styles from '../styles/shared.module.scss'
 
 const App = ({ Component, pageProps }) => {
   const router = useRouter()

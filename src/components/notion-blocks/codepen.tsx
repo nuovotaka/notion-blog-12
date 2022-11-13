@@ -1,7 +1,7 @@
 import React from "react"
 import Codepen from 'react-codepen-embed'
 
-import styles from '../../styles/notion-block.module.css'
+import styles from '../../styles/notion-block.module.scss'
 
 const CodepenEmbedded = ({ url }) => {
   let matched: string[]

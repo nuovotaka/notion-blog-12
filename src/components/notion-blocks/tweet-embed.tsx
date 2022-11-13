@@ -1,6 +1,6 @@
 import { TwitterTweetEmbed } from 'react-twitter-embed'
 
-import styles from '../../styles/notion-block.module.css'
+import styles from '../../styles/notion-block.module.scss'
 
 const TweetEmbed = ({ url }) => {
   let matched: Array<string>

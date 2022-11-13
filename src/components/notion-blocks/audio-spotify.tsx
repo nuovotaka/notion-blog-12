@@ -1,6 +1,6 @@
 import Spotify from 'react-spotify-embed'
 
-import styles from '../../styles/notion-block.module.css'
+import styles from '../../styles/notion-block.module.scss'
 
 
 const AudioSpotify = ({ url }) => {

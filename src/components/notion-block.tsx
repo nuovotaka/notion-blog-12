@@ -11,7 +11,7 @@ const BlockEquation = dynamic(() => import('./notion-blocks/block-equation'))
 const Pdf = dynamic(() => import('./notion-blocks/pdf'))
 const InlineMention = dynamic(() => import('./notion-blocks/inline-mention'))
 
-import styles from '../styles/notion-block.module.css'
+import styles from '../styles/notion-block.module.scss'
 
 const RichText = ({ richText }) => {
   let element

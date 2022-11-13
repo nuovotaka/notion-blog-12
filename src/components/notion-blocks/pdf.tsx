@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 import { UAParser } from 'ua-parser-js'
 
-import styles from '../../styles/notion-block.module.css'
+import styles from '../../styles/notion-block.module.scss'
 
 let uaModel
 let isMobile
