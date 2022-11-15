@@ -386,7 +386,7 @@
     label {
       cursor: pointer;
       padding: 5px;
-      background-color: #eee;
+      background-color: var(--childbg);
     }
   }
 }
@@ -395,7 +395,7 @@
   display: none;
   height: 0;
   overflow: hidden;
-  background-color: #ddd;
+  background-color: var(--childbg);
   transition: max-height 0.3s;
 }
 
