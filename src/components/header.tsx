@@ -1,7 +1,10 @@
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import styles from '../styles/header.module.scss'
+
+const ModeSwitch = dynamic(() => import('./mode-switch'))
 
 interface NavItem {
   label: string
@@ -29,6 +32,7 @@ const Header = () => {
           </li>
         ))}
       </ul>
+      <ModeSwitch />
     </header>
   )
 }
