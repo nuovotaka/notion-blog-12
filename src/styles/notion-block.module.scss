@@ -228,7 +228,7 @@
     width: 100%;
     box-sizing: border-box;
     text-decoration: none;
-    border: 1px solid rgba(55, 53, 47, 0.16);
+    border: 1px solid var(--bookmark-border);
     border-radius: 3px;
     display: flex;
     overflow: hidden;
@@ -240,7 +240,7 @@
         padding: 12px 14px 14px;
         overflow: hidden;
         text-align: left;
-        // color: var(--fg);
+        color: var(--fg);
 
         >div {
           &:first-child {

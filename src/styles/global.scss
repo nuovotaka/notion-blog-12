@@ -8,7 +8,8 @@
   --bg: #fff;
   --childbg: #ddd;
   --fg: #333;
-  --text-color: #222;
+  --listitem-color: #222;
+  --bookmark-border: rgba(55, 53, 47, 0.16);
 
   /* --accents-1: #0070f3;
   --accents-2: #3291ff; */
@@ -58,21 +59,17 @@ body {
   -webkit-font-smoothing: antialiased;
 
   &.dark-mode {
-    color: var(--bg);
-    background: var(--fg);
-    
-    h1,h2,h3,h4,h5,h6 {
-      color: var(--bg);
-    }
-    ol {
-      color: #ddd;
-    }
-    p,ul {
-      color: #ddd;
-    }
-    table {
-      color: #ddd;
-    }
+    --bg: #333;
+    --fg: #fff;
+    --listitem-color: #ddd;
+    --bookmark-border: rgba(255, 255, 255, 0.608);
+  }
+
+  &.light-mode {
+    --bg: #fff;
+    --fg: #333;
+    --listitem-color: #222;
+    --bookmark-border: rgba(55, 53, 47, 0.16);
   }
 }
 
@@ -121,7 +118,7 @@ h3 {
 }
 
 ol {
-  color: var(--text-color);
+  color: var(--listitem-color);
   font-weight: 400;
   font-size: 0.9rem;
   line-height: 1.8rem;
@@ -129,7 +126,7 @@ ol {
 
 p,
 ul {
-  color: var(--text-color);
+  color: var(--listitem-color);
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.8rem;
@@ -164,7 +161,7 @@ code {
 }
 
 table {
-  color: var(--text-color);
+  color: var(--listitem-color);
   border-collapse: collapse;
 
   tr {
