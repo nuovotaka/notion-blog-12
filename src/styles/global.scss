@@ -184,3 +184,22 @@ table {
     line-height: 1.2rem;
   }
 }
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -30px;
+
+  @include m.mq(enb2) {
+    margin-left: 0;
+  }
+}
+
+.my-masonry-grid-_column {
+  padding-left: 30px;
+  background-clip: padding-box;
+
+  >div {
+    background: gray;
+    margin-bottom: 30px;
+  }
+}

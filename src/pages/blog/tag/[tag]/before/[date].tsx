@@ -13,7 +13,6 @@ import {
   PostTags,
   PostTitle,
   PostsNotFound,
-  ReadMoreLink,
 } from '../../../../../components/blog-parts'
 import styles from '../../../../../styles/blog.module.scss'
 
@@ -24,6 +23,7 @@ import {
   getFirstPostByTag,
   getAllTags,
 } from '../../../../../lib/notion/client'
+import Masonry from 'react-masonry-css'
 
 export async function getStaticProps({ params: { tag, date } }) {
   if (!Date.parse(date) || !/\d{4}-\d{2}-\d{2}/.test(date)) {
@@ -92,6 +92,14 @@ const RenderPostsByTagBeforeDate = ({
     return <PostsNotFound />
   }
 
+  const breakpointColumnsObj = {
+    default: 2,
+    1280: 2,
+    1100: 2,
+    800: 2,
+    500: 1
+  };
+
   return (
     <div className={styles.container}>
       <DocumentHead description={`Posts in ${tag} before ${date}`} />
@@ -102,7 +110,11 @@ const RenderPostsByTagBeforeDate = ({
         </header>
 
         <NoContents contents={posts} />
-
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
         {posts.map(post => {
           return (
             <div className={styles.post} key={post.Slug}>
@@ -110,10 +122,10 @@ const RenderPostsByTagBeforeDate = ({
               <PostTags post={post} />
               <PostTitle post={post} />
               <PostExcerpt post={post} />
-              <ReadMoreLink post={post} />
             </div>
           )
         })}
+        </Masonry>
 
         <footer>
           <div className={styles.PageLinkContainer}>
