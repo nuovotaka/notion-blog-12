@@ -47,6 +47,7 @@
   :global(h3) {
     margin: 0;
     color: var(--fg);
+    margin-top: 5px;
 
     a:before {
       content: "";
@@ -119,6 +120,7 @@
   :global(h3) {
     margin: 0;
     color: var(--fg);
+    margin-top: 5px;
   }
 
   :global(h4),
