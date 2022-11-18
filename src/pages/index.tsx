@@ -8,7 +8,6 @@ import {
   PostExcerpt,
   PostTags,
   PostTitle,
-  ReadMoreLink,
 } from '../components/blog-parts'
 import styles from '../styles/blog.module.scss'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -19,6 +18,8 @@ import {
   getRankedPosts,
   getAllTags,
 } from '../lib/notion/client'
+
+import Masonry from 'react-masonry-css'
 
 export async function getStaticProps() {
   const [posts, firstPost, rankedPosts, tags] = await Promise.all([
@@ -46,13 +47,24 @@ const Index = ({
   rankedPosts = [],
   tags = [],
 }) => {
+  const breakpointColumnsObj = {
+    default: 2,
+    1280: 2,
+    1100: 2,
+    800: 2,
+    500: 1
+  };
   return (
     <div className={styles.container}>
       <DocumentHead title="Home" />
 
       <div className={styles.mainContent}>
         <NoContents contents={posts} />
-
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
         {posts.map(post => {
           return (
             <div className={styles.post} key={post.Slug}>
@@ -60,10 +72,11 @@ const Index = ({
               <PostTags post={post} />
               <PostTitle post={post} />
               <PostExcerpt post={post} />
-              <ReadMoreLink post={post} />
+              {/* <ReadMoreLink post={post} /> */}
             </div>
           )
         })}
+        </Masonry>
 
         <footer>
           <div className={Mystyles.nextPageLink}>

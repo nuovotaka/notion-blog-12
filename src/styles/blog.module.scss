@@ -36,7 +36,11 @@
 }
 
 .post {
+  width: 90%;
   margin: 0 auto 40px;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px gray;
 
   :global(h3) {
     margin: 0;

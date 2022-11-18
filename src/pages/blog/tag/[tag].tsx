@@ -12,7 +12,6 @@ import {
   PostTags,
   PostTitle,
   PostsNotFound,
-  ReadMoreLink,
 } from '../../../components/blog-parts'
 import styles from '../../../styles/blog.module.scss'
 import { getTagLink } from '../../../lib/blog-helpers'
@@ -24,6 +23,7 @@ import {
   getFirstPostByTag,
   getAllTags,
 } from '../../../lib/notion/client'
+import Masonry from 'react-masonry-css'
 
 export async function getStaticProps({ params: { tag } }) {
   const posts = await getPostsByTag(tag, NUMBER_OF_POSTS_PER_PAGE)
@@ -88,6 +88,14 @@ const RenderPostsByTags = ({
     return <PostsNotFound />
   }
 
+  const breakpointColumnsObj = {
+    default: 2,
+    1280: 2,
+    1100: 2,
+    800: 2,
+    500: 1
+  };
+
   return (
     <div className={styles.container}>
       <DocumentHead description={`Posts in ${tag}`} />
@@ -98,7 +106,11 @@ const RenderPostsByTags = ({
         </header>
 
         <NoContents contents={posts} />
-
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
         {posts.map(post => {
           return (
             <div className={styles.post} key={post.Slug}>
@@ -106,10 +118,10 @@ const RenderPostsByTags = ({
               <PostTags post={post} />
               <PostTitle post={post} />
               <PostExcerpt post={post} />
-              <ReadMoreLink post={post} />
             </div>
           )
         })}
+        </Masonry>
 
         <footer>
           <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
