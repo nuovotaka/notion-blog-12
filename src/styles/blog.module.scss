@@ -101,3 +101,67 @@
     border: 0;
   }
 }
+
+.blogpost {
+  width: 90%;
+  margin: 0 auto 40px;
+
+  :global(h3) {
+    margin: 0;
+    color: var(--fg);
+  }
+
+  :global(h4),
+  :global(h5),
+  :global(h6) {
+    margin: 1.8rem 0 0.8rem;
+    color: var(--fg);
+    font-size: 1.1rem;
+
+    &:after {
+      color: var(--accents-1);
+      font-size: 0.9rem;
+      content: '▼';
+      padding-left: 0.2rem;
+    }
+  }
+
+  :global(p) {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+    min-height: 1.8rem;
+  }
+
+  :global(video),
+  :global(img) {
+    max-width: 100%;
+    display: inline-block;
+  }
+
+  :global(blockquote) {
+    margin: 0.6rem 0;
+    padding: 0 0.9rem;
+    border-left: 3px solid var(--fg);
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
+
+  table {
+    margin: 1rem 0;
+  }
+
+  ul,
+  ol {
+    font-size: 1rem;
+  }
+
+  p code {
+    color: var(--p-code-color);
+    padding: 0.25rem;
+  }
+
+  footer {
+    padding: 0;
+    border: 0;
+  }
+}

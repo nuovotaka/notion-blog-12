@@ -130,7 +130,7 @@ const RenderPost = ({
       />
 
       <div className={styles.mainContent}>
-        <div className={styles.post}>
+        <div className={styles.blogpost}>
           <PostDate post={post} />
           <PostTags post={post} />
           <PostTitle post={post} enableLink={false} />
