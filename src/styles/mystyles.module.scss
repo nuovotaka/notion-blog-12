@@ -9,18 +9,6 @@
   justify-content: space-between;
 }
 
-.previusPageLink a {
-  width: 30%;
-  margin: 0 auto;
-  color: inherit;
-  font-size: 1rem;
-  line-height: 1rem;
-}
-
-.nextPageLink {
-  text-align: right;
-}
-
 .bottomNavLink {
   display: inline-block;
   @include m.mq(tab) {

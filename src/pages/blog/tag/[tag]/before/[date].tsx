@@ -15,6 +15,7 @@ import {
   PostsNotFound,
 } from '../../../../../components/blog-parts'
 import styles from '../../../../../styles/blog.module.scss'
+import Mystyles from '../../../../../styles/mystyles.module.scss'
 
 import {
   getPosts,
@@ -128,9 +129,10 @@ const RenderPostsByTagBeforeDate = ({
         </Masonry>
 
         <footer>
-          <div className={styles.PageLinkContainer}>
-            <a className={styles.previusPageLink}
-              onClick={() => router.back()}>← Newer Page</a>
+          <div className={Mystyles.PageLinkContainer}>
+            <div>
+              <a onClick={() => router.back()}>← Newer Page</a>
+            </div>
             <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
           </div>
         </footer>
