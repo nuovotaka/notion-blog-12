@@ -44,10 +44,6 @@
   position: relative;
   overflow: hidden;
 
-  &:hover {
-    box-shadow: 0px 0px 3px gray;
-  }
-
   :global(h3) {
     margin: 0;
     color: var(--fg);
@@ -114,6 +110,18 @@
   footer {
     padding: 0;
     border: 0;
+  }
+}
+
+@media screen and (hover: hover) {
+  .post:hover {
+    box-shadow: 0px 0px 3px gray;
+  }
+}
+
+@media screen and (hover: none) {
+  .post:active {
+    box-shadow: 0px 0px 3px gray;
   }
 }
 
