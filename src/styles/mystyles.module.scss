@@ -78,3 +78,14 @@
     }
   }
 }
+
+.like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.likebutton {
+  background-color: var(--bg);
+  border: none;
+}
