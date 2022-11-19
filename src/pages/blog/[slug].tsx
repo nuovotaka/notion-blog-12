@@ -29,6 +29,7 @@ import {
   getAllBlocksByBlockId,
 } from '../../lib/notion/client'
 import TocLink from '../../components/toc'
+import LikeButton from '../../components/like-button'
 
 export async function getStaticProps({ params: { slug } }) {
   const post = await getPostBySlug(slug)
@@ -121,6 +122,7 @@ const RenderPost = ({
     return <PostsNotFound />
   }
 
+  console.log(post)
   return (
     <div className={styles.container}>
       <DocumentHead
@@ -149,6 +151,7 @@ const RenderPost = ({
                 id={post.Slug}
               />
             )}
+            <LikeButton slug={post.Slug} like={post.Like} />
           </footer>
         </div>
       </div>
