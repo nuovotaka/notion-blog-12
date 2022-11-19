@@ -122,7 +122,6 @@ const RenderPost = ({
     return <PostsNotFound />
   }
 
-  console.log(post)
   return (
     <div className={styles.container}>
       <DocumentHead
