@@ -13,6 +13,7 @@
   --listitem-color: #222;
   --bookmark-border: rgba(55, 53, 47, 0.16);
   --p-code-color: #eb5757;
+  --header-title: #fff;
 
   /* --accents-1: #0070f3;
   --accents-2: #3291ff; */
@@ -64,6 +65,7 @@ body {
   &.dark-mode {
     --bg: #333;
     --fg: #fff;
+    --accents-3: #ddd;
     --listitem-color: #ddd;
     --bookmark-border: rgba(255, 255, 255, 0.608);
   }
@@ -71,6 +73,7 @@ body {
   &.light-mode {
     --bg: #fff;
     --fg: #333;
+    --accents-3: #666;
     --listitem-color: #222;
     --bookmark-border: rgba(55, 53, 47, 0.16);
   }
