@@ -1,16 +1,16 @@
-jest.mock('../../../src/lib/notion/blog-index-cache')
+jest.mock('../../../lib/notion/blog-index-cache')
 
 import {
   getPosts,
   getAllBlocksByBlockId,
   getAllTags,
-} from '../../../src/lib/notion/client'
+} from '../../../lib/notion/client'
 
 import {
   Post,
   Block,
   Annotation,
-} from '../../../src/lib/notion/interfaces'
+} from '../../../lib/notion/interfaces'
 
 describe('getPosts', () => {
   const expected: Post[] = [
@@ -23,6 +23,7 @@ describe('getPosts', () => {
       Excerpt: "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。",
       OGImage: null,
       Rank: 3,
+      Like: 0,
     },
   ]
 

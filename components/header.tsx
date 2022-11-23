@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { NEXT_PUBLIC_SITE_TITLE } from '../lib/notion/server-constants'
 import { FaHome, FaLink, FaUser } from 'react-icons/fa'
 import { MdPrivacyTip } from 'react-icons/md'
 
@@ -26,6 +27,11 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
+      <h1>
+        <Link href="/" passHref>
+          <a>{NEXT_PUBLIC_SITE_TITLE}</a>
+        </Link>
+      </h1>      
       <ul>
         {navItems.map(({ label, path, icon }) => (
           <li key={label} >

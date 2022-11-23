@@ -1,6 +1,5 @@
 import ExtLink from './ext-link'
-import { Config } from '../utils/Config'
-
+import { NEXT_PUBLIC_SITE_TITLE } from '../lib/notion/server-constants'
 import BottomNav from './bottom-nav'
 
 import styles from '../styles/footer.module.scss'
@@ -13,7 +12,7 @@ const Footer = () => (
       {' '}
       {new Date().getFullYear()}
       {' '}
-      {Config.site_name}
+      {NEXT_PUBLIC_SITE_TITLE}
     </div>
     <div>
       <span>Powered by </span>
