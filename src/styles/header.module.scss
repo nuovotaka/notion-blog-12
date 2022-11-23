@@ -1,5 +1,65 @@
 @use "mixin" as m;
 
+.siteheader {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  font-weight: 400;
+  color: #000;
+  background: rgba(255,255,255, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transition: .4s;
+  
+  a {
+    color: inherit;
+  }
+
+  &:hover {
+    z-index: 1;
+    border-color: transparent;
+    background: linear-gradient(
+      90deg,
+      #f9d923,
+      #00a19d,
+      #0c87b7,
+      #cb49ff,
+      #ff6666,
+      #f9d923
+    );
+    background-size: 400%;
+    box-shadow: 0 0 15px rgb(2, 4, 24);
+    animation: glow 12s linear forwards;
+
+    &::before {
+      opacity: 1;
+      z-index: -1;
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1;
+    right: -1;
+    bottom: -1;
+    left: -1;
+    background: inherit;
+    filter: blur(36px);
+    opacity: 0;
+    transition: .4s ease-out;
+  }
+}
+
+@keyframes glow {
+  from {
+    background-position: 0%;
+  }
+
+  to {
+    background-position: 400%;
+  }
+}
+
 .header {
   display: flex;
   // padding: 30px 0;

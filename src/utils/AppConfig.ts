@@ -1,4 +1,4 @@
-export const Config = {
+export const AppConfig = {
   site_name: 'dev.NUOVOTAKA',
   title: 'dev.NUOVOTAKA',
   description:

@@ -1,5 +1,5 @@
 import ExtLink from './ext-link'
-import { Config } from '../utils/Config'
+import { AppConfig } from '../utils/AppConfig'
 
 import BottomNav from './bottom-nav'
 
@@ -13,7 +13,7 @@ const Footer = () => (
       {' '}
       {new Date().getFullYear()}
       {' '}
-      {Config.site_name}
+      {AppConfig.site_name}
     </div>
     <div>
       <span>Powered by </span>

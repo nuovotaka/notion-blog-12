@@ -5,6 +5,7 @@ import { FaHome, FaLink, FaUser } from 'react-icons/fa'
 import { MdPrivacyTip } from 'react-icons/md'
 
 import styles from '../styles/header.module.scss'
+import { AppConfig } from '../utils/AppConfig'
 
 const ModeSwitch = dynamic(() => import('./mode-switch'))
 
@@ -25,21 +26,28 @@ const Header = () => {
   ]
 
   return (
-    <header className={styles.header}>
-      <ul>
-        {navItems.map(({ label, path, icon }) => (
-          <li key={label} >
-            <span className={styles.icon}>{icon}</span>
-            <span className={styles.title}>
-              <Link href={path} passHref>
-                <a className={asPath === path ? 'active' : null}>{label}</a>
-              </Link>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <ModeSwitch />
-    </header>
+    <>
+      <h1 className={styles.siteheader}>
+        <Link href="/" passHref>
+          <a>{AppConfig.site_name}</a>
+        </Link>
+      </h1>
+      <header className={styles.header}>
+        <ul>
+          {navItems.map(({ label, path, icon }) => (
+            <li key={label} >
+              <span className={styles.icon}>{icon}</span>
+              <span className={styles.title}>
+                <Link href={path} passHref>
+                  <a className={asPath === path ? 'active' : null}>{label}</a>
+                </Link>
+              </span>
+            </li>
+          ))}
+        </ul>
+        <ModeSwitch />
+      </header>
+    </>
   )
 }
 

@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Config } from '../utils/Config'
+import { AppConfig } from '../utils/AppConfig'
 
 import { NEXT_PUBLIC_URL } from '../lib/notion/server-constants'
 
-export const SITE_TITLE = `${Config.title }`
-export const SITE_DESCRIPTION = `${Config.description}`
+export const SITE_TITLE = `${AppConfig.title }`
+export const SITE_DESCRIPTION = `${AppConfig.description}`
 
 const DocumentHead = ({ title = '', description = '', urlOgImage = '' }) => {
   const { asPath } = useRouter()
