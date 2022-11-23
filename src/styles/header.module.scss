@@ -148,7 +148,6 @@
         }
 
         .title {
-          color: var(--bg);
           transform: scale(0);
           transition: 0.5s;
           transition-delay: 0s;
@@ -187,7 +186,11 @@
       }
 
       :global(a.active) {
-        color: var(--accents-3);
+        color: var(--header-title);
+
+        @include m.mq(tab) {
+          color: var(--accents-3);
+        }
       }
     }
   }
