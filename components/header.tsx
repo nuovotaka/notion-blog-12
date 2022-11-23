@@ -6,7 +6,6 @@ import { FaHome, FaLink, FaUser } from 'react-icons/fa'
 import { MdPrivacyTip } from 'react-icons/md'
 
 import styles from '../styles/header.module.scss'
-import { AppConfig } from '../utils/AppConfig'
 
 const ModeSwitch = dynamic(() => import('./mode-switch'))
 
@@ -37,7 +36,7 @@ const Header = () => {
     <>
       <h1 className={styles.siteheader}>
         <Link href="/" passHref>
-          <a>{AppConfig.site_name}</a>
+          <a>{NEXT_PUBLIC_SITE_TITLE}</a>
         </Link>
       </h1>
       <header className={styles.header}>
