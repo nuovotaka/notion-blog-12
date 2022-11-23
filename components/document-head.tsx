@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Config } from '../utils/AppConfig'
 
 import {
   NEXT_PUBLIC_URL,

@@ -31,7 +31,7 @@ const Header = () => {
         <Link href="/" passHref>
           <a>{NEXT_PUBLIC_SITE_TITLE}</a>
         </Link>
-      </h1>      
+      </h1>
       <ul>
         {navItems.map(({ label, path, icon }) => (
           <li key={label} >

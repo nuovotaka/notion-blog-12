@@ -10,7 +10,6 @@ import {
   PostTitle,
 } from '../components/blog-parts'
 import styles from '../styles/blog.module.scss'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Mystyles from '../styles/mystyles.module.scss'
 import {
   getPosts,
