@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { NEXT_PUBLIC_SITE_TITLE } from '../lib/notion/server-constants'
+import { NEXT_PUBLIC_SITE_TITLE } from '../app/server-constants'
 import { FaHome, FaLink, FaUser } from 'react-icons/fa'
 import { MdPrivacyTip } from 'react-icons/md'
 
