@@ -1,5 +1,5 @@
-import ExtLink from './ext-link'
-import { NEXT_PUBLIC_SITE_TITLE } from '../lib/notion/server-constants'
+import Link from 'next/link'
+import { NEXT_PUBLIC_SITE_TITLE } from '../app/server-constants'
 import BottomNav from './bottom-nav'
 
 import styles from '../styles/footer.module.scss'
@@ -16,9 +16,9 @@ const Footer = () => (
     </div>
     <div>
       <span>Powered by </span>
-      <ExtLink href="https://github.com/otoyo/easy-notion-blog">
+      <Link href="https://github.com/otoyo/easy-notion-blog">
         easy-notion-blog
-      </ExtLink>
+      </Link>
     </div>
     <div className={Mystyles.bottomNavLink}>
       <BottomNav />
