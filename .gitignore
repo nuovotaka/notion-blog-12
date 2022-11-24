@@ -35,3 +35,5 @@ public/notion_images/*
 !public/notion_images/.gitkeep
 
 /css/
+
+.tool-versions
