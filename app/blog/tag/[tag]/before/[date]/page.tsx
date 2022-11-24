@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound, useRouter } from 'next/navigation'
+import Masonry from 'react-masonry-css'
 import { NUMBER_OF_POSTS_PER_PAGE } from '../../../../../../app/server-constants'
 import {
   BlogPostLink,
@@ -18,13 +19,15 @@ import {
   getFirstPostByTag,
   getAllTags,
 } from '../../../../../../lib/notion/client'
-import styles from '../../../../../../styles/blog.module.css'
+import styles from '../../../../../../styles/blog.module.scss'
+import Mystyles from '../../../../../../styles/mystyles.module.scss'
 
 export const revalidate = 3600
 
 const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedDate } }) => {
   const tag = decodeURIComponent(encodedTag)
   const date = decodeURIComponent(encodedDate)
+  const router = useRouter()
 
   if (!Date.parse(date) || !/^\d{4}-\d{2}-\d{2}/.test(date)) {
     notFound()
@@ -38,6 +41,14 @@ const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedD
     getAllTags(),
   ])
 
+  const breakpointColumnsObj = {
+    default: 2,
+    1280: 2,
+    1100: 2,
+    800: 2,
+    500: 1
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.mainContent}>
@@ -46,6 +57,11 @@ const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedD
         </header>
 
         <NoContents contents={posts} />
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
 
         {posts.map(post => {
           return (
@@ -58,9 +74,15 @@ const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedD
             </div>
           )
         })}
+        </Masonry>
 
         <footer>
-          <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
+          <div className={Mystyles.PageLinkContainer}>
+            <div>
+              <a onClick={() => router.back()}>← Newer Page</a>
+            </div>
+            <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
+          </div>
         </footer>
       </div>
 
