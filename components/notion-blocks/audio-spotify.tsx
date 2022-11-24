@@ -1,3 +1,5 @@
+'use client'
+
 import Spotify from 'react-spotify-embed'
 
 import styles from '../../styles/notion-block.module.scss'

@@ -1,3 +1,5 @@
+'use client'
+
 import styles from '../../styles/notion-block.module.scss'
 
 const InlineMention = ({ mention }) => {
