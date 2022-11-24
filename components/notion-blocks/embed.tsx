@@ -1,10 +1,8 @@
-import dynamic from 'next/dynamic'
-
-const TweetEmbed = dynamic(() => import('./tweet-embed'))
-const Bookmark = dynamic(() => import('./bookmark'))
-const AudioSpotify = dynamic(() => import('./audio-spotify'))
-const GoogleMapsEmbed = dynamic(() => import('./google-maps'))
-const CodepenEmbedded = dynamic(() => import('./codepen'))
+import TweetEmbed from './tweet-embed'
+import Bookmark from './bookmark'
+import AudioSpotify from './audio-spotify'
+import GoogleMapsEmbed from './google-maps'
+import CodepenEmbedded from './codepen'
 
 const Embed = ({ block }) => {
   if (/^https:\/\/twitter\.com/.test(block.Embed.Url)) {
