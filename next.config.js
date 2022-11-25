@@ -31,6 +31,12 @@ if (!DATABASE_ID) {
 }
 
 module.exports = {
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback.fs = false;
+    }
+    return config
+  },
   images: {
     domains: ['s3.us-west-2.amazonaws.com', 'images.unsplash.com'],
   },
