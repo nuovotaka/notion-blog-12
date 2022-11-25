@@ -28,6 +28,7 @@ const Header = () => {
   const navItems: NavItem[] = [
     { label: 'Home', path: '/' , icon: <FaHome color={'#999'} />, color1: '#ff9966', color2: '#ff5e62' },
     { label: 'About', path: '/about', icon: <FaUser color={'#999'} />, color1: '#56ccf2', color2: '#2f80ed' },
+    { label: 'Blog', path: '/blog', icon: <FaUser color={'#999'} />, color1: '#56ccf2', color2: '#2f80ed' },
     { label: 'NUOVOTAKA', path: 'https://nuovotaka.com', icon: <FaLink color={'#999'} />, color1: '#d47aff', color2: '#f6a3f0' },
     { label: 'Privacy', path: '/privacy', icon: <MdPrivacyTip color={'#999'} />, color1: '#80ff72', color2: '#7ee8fa' },
   ]

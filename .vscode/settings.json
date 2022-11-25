@@ -1,6 +1,7 @@
 {
-    "cSpell.words": [
-    ],
-    "dartsass.targetDirectory": "css/",
-    "dartsass.outputFormat": "cssonly"
+  "cSpell.words": [],
+  "dartsass.targetDirectory": "css/",
+  "dartsass.outputFormat": "cssonly",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

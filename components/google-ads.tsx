@@ -1,5 +1,5 @@
 import Script from 'next/script'
-import { NEXT_PUBLIC_G_ADS_ID } from '../lib/notion/server-constants'
+import { NEXT_PUBLIC_G_ADS_ID } from '../app/server-constants'
 
 const GoogleADS = () => {
   if (!NEXT_PUBLIC_G_ADS_ID) {

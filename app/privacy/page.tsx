@@ -3,7 +3,7 @@ import styles from '../../styles/page.module.scss'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Mystyles from '../../styles/mystyles.module.scss'
 
-const RenderPage = () => (
+const PrivacyPage = () => (
   <div className={styles.container}>
     <DocumentHead title="Privacy" />
 
@@ -64,4 +64,4 @@ const RenderPage = () => (
   </div>
 )
 
-export default RenderPage
+export default PrivacyPage

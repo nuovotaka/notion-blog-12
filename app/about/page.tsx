@@ -2,7 +2,7 @@ import DocumentHead from '../../components/document-head'
 
 import styles from '../../styles/page.module.scss'
 
-const RenderPage = () => (
+const AboutPage = () => (
   <div className={styles.container}>
     <DocumentHead title="About"/>
 
@@ -15,4 +15,4 @@ const RenderPage = () => (
   </div>
 )
 
-export default RenderPage
+export default AboutPage

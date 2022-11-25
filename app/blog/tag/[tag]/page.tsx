@@ -17,7 +17,6 @@ import {
   getFirstPostByTag,
   getAllTags,
 } from '../../../../lib/notion/client'
-import Masonry from 'react-masonry-css'
 
 export const revalidate = 60
 export const dynamicParams = false
@@ -43,25 +42,12 @@ const BlogTagPage = async ({ params: { tag: encodedTag } }) => {
     getAllTags(),
   ])
 
-  const breakpointColumnsObj = {
-    default: 2,
-    1280: 2,
-    1100: 2,
-    800: 2,
-    500: 1
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.mainContent}>
         <header>
           <h2>{tag}</h2>
         </header>
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
 
         {posts.map(post => {
           return (
@@ -74,7 +60,6 @@ const BlogTagPage = async ({ params: { tag: encodedTag } }) => {
             </div>
           )
         })}
-        </Masonry>
 
         <footer>
           <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />

@@ -1,4 +1,4 @@
-import { NUMBER_OF_POSTS_PER_PAGE } from '../../app/server-constants'
+import { NUMBER_OF_POSTS_PER_PAGE } from '../server-constants'
 import {
   BlogPostLink,
   BlogTagLink,
@@ -17,7 +17,6 @@ import {
   getRankedPosts,
   getAllTags,
 } from '../../lib/notion/client'
-import Masonry from 'react-masonry-css'
 
 export const revalidate = 60
 
@@ -29,23 +28,10 @@ const BlogPage = async () => {
     getAllTags(),
   ])
 
-  const breakpointColumnsObj = {
-    default: 2,
-    1280: 2,
-    1100: 2,
-    800: 2,
-    500: 1
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.mainContent}>
         <NoContents contents={posts} />
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
 
         {posts.map(post => {
           return (
@@ -58,7 +44,6 @@ const BlogPage = async () => {
             </div>
           )
         })}
-        </Masonry>
 
         <footer>
           <div className={Mystyles.nextPageLink}>

@@ -19,7 +19,6 @@ import {
 } from '../../../../components/blog-parts'
 import styles from '../../../../styles/blog.module.scss'
 import Mystyles from '../../../../styles/mystyles.module.scss'
-import Masonry from 'react-masonry-css'
 
 export const revalidate = 3600
 
@@ -38,14 +37,6 @@ const BlogBeforeDatePage = async ({ params: { date: encodedDate } }) => {
     getAllTags(),
   ])
 
-  const breakpointColumnsObj = {
-    default: 2,
-    1280: 2,
-    1100: 2,
-    800: 2,
-    500: 1
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.mainContent}>
@@ -54,11 +45,6 @@ const BlogBeforeDatePage = async ({ params: { date: encodedDate } }) => {
         </header>
 
         <NoContents contents={posts} />
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
 
         {posts.map(post => {
           return (
@@ -71,7 +57,6 @@ const BlogBeforeDatePage = async ({ params: { date: encodedDate } }) => {
             </div>
           )
         })}
-        </Masonry>
 
         <footer>
           <div className={Mystyles.PageLinkContainer}>

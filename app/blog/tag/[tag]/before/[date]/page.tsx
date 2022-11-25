@@ -1,5 +1,4 @@
 import { notFound, useRouter } from 'next/navigation'
-import Masonry from 'react-masonry-css'
 import { NUMBER_OF_POSTS_PER_PAGE } from '../../../../../../app/server-constants'
 import {
   BlogPostLink,
@@ -41,14 +40,6 @@ const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedD
     getAllTags(),
   ])
 
-  const breakpointColumnsObj = {
-    default: 2,
-    1280: 2,
-    1100: 2,
-    800: 2,
-    500: 1
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.mainContent}>
@@ -57,11 +48,6 @@ const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedD
         </header>
 
         <NoContents contents={posts} />
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
 
         {posts.map(post => {
           return (
@@ -74,7 +60,6 @@ const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedD
             </div>
           )
         })}
-        </Masonry>
 
         <footer>
           <div className={Mystyles.PageLinkContainer}>

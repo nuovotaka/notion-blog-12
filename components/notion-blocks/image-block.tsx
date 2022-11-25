@@ -4,7 +4,7 @@ import React from 'react'
 import useSWR from "swr"
 import axios from 'axios'
 import { Block } from '../../lib/notion/interfaces'
-import styles from '../../styles/blog.module.css'
+import styles from '../../styles/blog.module.scss'
 
 const fetchBlock = async (blockId: string): Promise<Block> => {
   try {
