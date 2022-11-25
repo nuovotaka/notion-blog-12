@@ -1,5 +1,3 @@
-'use client'
-
 import { redirect } from 'next/navigation'
 import { NEXT_PUBLIC_URL } from '../../server-constants'
 import { Post } from '../../../lib/notion/interfaces'
