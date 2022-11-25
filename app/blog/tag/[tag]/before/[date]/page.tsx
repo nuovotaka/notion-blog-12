@@ -1,4 +1,4 @@
-import { notFound, useRouter } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import { NUMBER_OF_POSTS_PER_PAGE } from '../../../../../../app/server-constants'
 import {
   BlogPostLink,
@@ -9,7 +9,6 @@ import {
   PostExcerpt,
   PostTags,
   PostTitle,
-  ReadMoreLink,
 } from '../../../../../../components/blog-parts'
 import {
   getPosts,
@@ -26,7 +25,7 @@ export const revalidate = 3600
 const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedDate } }) => {
   const tag = decodeURIComponent(encodedTag)
   const date = decodeURIComponent(encodedDate)
-  const router = useRouter()
+  // const history = useRouter()
 
   if (!Date.parse(date) || !/^\d{4}-\d{2}-\d{2}/.test(date)) {
     notFound()
@@ -56,7 +55,7 @@ const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedD
               <PostTags post={post} />
               <PostTitle post={post} />
               <PostExcerpt post={post} />
-              <ReadMoreLink post={post} />
+              {/* <ReadMoreLink post={post} /> */}
             </div>
           )
         })}
@@ -64,7 +63,7 @@ const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedD
         <footer>
           <div className={Mystyles.PageLinkContainer}>
             <div>
-              <a onClick={() => router.back()}>← Newer Page</a>
+              {/* <a onClick={() => history.back()}>← Newer Page</a> */}
             </div>
             <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
           </div>

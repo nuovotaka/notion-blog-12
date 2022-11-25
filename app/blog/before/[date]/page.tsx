@@ -1,4 +1,4 @@
-import { notFound, useRouter } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import { NUMBER_OF_POSTS_PER_PAGE } from '../../../../app/server-constants'
 import {
   getRankedPosts,
@@ -15,7 +15,6 @@ import {
   PostExcerpt,
   PostTags,
   PostTitle,
-  ReadMoreLink,
 } from '../../../../components/blog-parts'
 import styles from '../../../../styles/blog.module.scss'
 import Mystyles from '../../../../styles/mystyles.module.scss'
@@ -24,7 +23,7 @@ export const revalidate = 3600
 
 const BlogBeforeDatePage = async ({ params: { date: encodedDate } }) => {
   const date = decodeURIComponent(encodedDate)
-  const router = useRouter()
+  // const router = useRouter()
 
   if (!Date.parse(date) || !/^\d{4}-\d{2}-\d{2}/.test(date)) {
     notFound()
@@ -53,7 +52,7 @@ const BlogBeforeDatePage = async ({ params: { date: encodedDate } }) => {
               <PostTags post={post} />
               <PostTitle post={post} />
               <PostExcerpt post={post} />
-              <ReadMoreLink post={post} />
+              {/* <ReadMoreLink post={post} /> */}
             </div>
           )
         })}
@@ -61,7 +60,7 @@ const BlogBeforeDatePage = async ({ params: { date: encodedDate } }) => {
         <footer>
           <div className={Mystyles.PageLinkContainer}>
             <div>
-              <a onClick={() => router.back()}>← Newer Page</a>
+              {/* <a onClick={() => router.back()}>← Newer Page</a> */}
             </div>
             <NextPageLink firstPost={firstPost} posts={posts} />
           </div>
