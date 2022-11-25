@@ -1,3 +1,5 @@
+'use client'
+
 import Mystyles from '../styles/mystyles.module.scss'
 import { FaHome, FaUser, FaLink } from 'react-icons/fa'
 import { MdPrivacyTip } from 'react-icons/md'
