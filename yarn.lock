@@ -600,6 +600,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@juggle/resize-observer@^3.2.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.4.0.tgz#08d6c5e20cf7e4cc02fd181c4b0c225cd31dbb60"
+  integrity sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==
+
 "@metascraper/helpers@^5.32.1":
   version "5.32.1"
   resolved "https://registry.yarnpkg.com/@metascraper/helpers/-/helpers-5.32.1.tgz#70c7740e07cc22efaec3f0efbde9604a7686b3bf"
@@ -627,6 +632,13 @@
     tldts "~5.7.92"
     url-regex-safe "~3.0.0"
     video-extensions "~1.2.0"
+
+"@mtsmfm/react-masonry@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@mtsmfm/react-masonry/-/react-masonry-0.1.1.tgz#8c69e76f2da940da64d17b46fd79691842beb469"
+  integrity sha512-T7IWmwSATCDN2Q8RnHOoIDMfob7NlfpBGm+BljS49bCnGIy/swkirz+5gQayB+RuXFS5/Yy2JqujtwL4JZAU+A==
+  dependencies:
+    "@juggle/resize-observer" "^3.2.0"
 
 "@next/env@13.0.5":
   version "13.0.5"
@@ -5035,9 +5047,9 @@ minipass-sized@^1.0.3:
     minipass "^3.0.0"
 
 minipass@^3.0.0, minipass@^3.1.1, minipass@^3.1.6:
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/minipass/-/minipass-3.3.4.tgz#ca99f95dd77c43c7a76bf51e6d200025eee0ffae"
-  integrity sha512-I9WPbWHCGu8W+6k1ZiGpPu0GkoKBeorkfKNuAFBNS1HNFJvke82sxvI5bzcCNpWPorkOO5QQ+zomzzwRxejXiw==
+  version "3.3.6"
+  resolved "https://registry.yarnpkg.com/minipass/-/minipass-3.3.6.tgz#7bba384db3a1520d18c9c0e5251c3444e95dd94a"
+  integrity sha512-DxiNidxSEK+tHG6zOIklvNOwm3hvCrbUrdtzY74U6HKTJxvIDfOUL5W5P2Ghd3DTkhhKPYGqeNUIh5qcM4YBfw==
   dependencies:
     yallist "^4.0.0"
 
