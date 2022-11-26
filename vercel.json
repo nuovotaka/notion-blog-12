@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/blog",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/blog",
+      "destination": "/"
+    }
+  ]
+}
