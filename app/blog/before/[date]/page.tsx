@@ -18,6 +18,7 @@ import {
 } from '../../../../components/blog-parts'
 import styles from '../../../../styles/blog.module.scss'
 import Mystyles from '../../../../styles/mystyles.module.scss'
+import GoogleAnalytics from '../../../../components/google-analytics'
 
 export const revalidate = 3600
 
@@ -37,43 +38,46 @@ const BlogBeforeDatePage = async ({ params: { date: encodedDate } }) => {
   ])
 
   return (
-    <div className={styles.container}>
-      <div className={styles.mainContent}>
-        <header>
-          <h2>Posts before {date.split('T')[0]}</h2>
-        </header>
+    <>
+      <GoogleAnalytics pageTitle={`Posts before ${date.split('T')[0]}`} />
+      <div className={styles.container}>
+        <div className={styles.mainContent}>
+          <header>
+            <h2>Posts before {date.split('T')[0]}</h2>
+          </header>
 
-        <NoContents contents={posts} />
+          <NoContents contents={posts} />
 
-        <div className={styles.template}>
-        {posts.map(post => {
-          return (
-            <div className={styles.post} key={post.Slug}>
-              <PostDate post={post} />
-              <PostTags post={post} />
-              <PostTitle post={post} />
-              <PostExcerpt post={post} />
-              {/* <ReadMoreLink post={post} /> */}
+          <div className={styles.template}>
+          {posts.map(post => {
+            return (
+              <div className={styles.post} key={post.Slug}>
+                <PostDate post={post} />
+                <PostTags post={post} />
+                <PostTitle post={post} />
+                <PostExcerpt post={post} />
+                {/* <ReadMoreLink post={post} /> */}
+              </div>
+            )
+          })}
+          </div>
+
+          <footer>
+            <div className={Mystyles.PageLinkContainer}>
+              <div>
+                {/* <a onClick={() => router.back()}>← Newer Page</a> */}
+              </div>
+              <NextPageLink firstPost={firstPost} posts={posts} />
             </div>
-          )
-        })}
+          </footer>
         </div>
 
-        <footer>
-          <div className={Mystyles.PageLinkContainer}>
-            <div>
-              {/* <a onClick={() => router.back()}>← Newer Page</a> */}
-            </div>
-            <NextPageLink firstPost={firstPost} posts={posts} />
-          </div>
-        </footer>
+        <div className={styles.subContent}>
+          <BlogPostLink heading="Recommended" posts={rankedPosts} />
+          <BlogTagLink heading="Categories" tags={tags} />
+        </div>
       </div>
-
-      <div className={styles.subContent}>
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
-        <BlogTagLink heading="Categories" tags={tags} />
-      </div>
-    </div>
+    </>
   )
 }
 

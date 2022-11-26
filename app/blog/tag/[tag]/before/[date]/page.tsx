@@ -10,6 +10,7 @@ import {
   PostTags,
   PostTitle,
 } from '../../../../../../components/blog-parts'
+import GoogleAnalytics from '../../../../../../components/google-analytics'
 import {
   getPosts,
   getRankedPosts,
@@ -40,44 +41,47 @@ const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedD
   ])
 
   return (
-    <div className={styles.container}>
-      <div className={styles.mainContent}>
-        <header>
-          <h2>{tag} before {date.split('T')[0]}</h2>
-        </header>
+    <>
+      <GoogleAnalytics pageTitle={`Posts in ${tag} before ${date.split('T')[0]}`} />
+      <div className={styles.container}>
+        <div className={styles.mainContent}>
+          <header>
+            <h2>{tag} before {date.split('T')[0]}</h2>
+          </header>
 
-        <NoContents contents={posts} />
+          <NoContents contents={posts} />
 
-        <div className={styles.template}>
-        {posts.map(post => {
-          return (
-            <div className={styles.post} key={post.Slug}>
-              <PostDate post={post} />
-              <PostTags post={post} />
-              <PostTitle post={post} />
-              <PostExcerpt post={post} />
-              {/* <ReadMoreLink post={post} /> */}
+          <div className={styles.template}>
+          {posts.map(post => {
+            return (
+              <div className={styles.post} key={post.Slug}>
+                <PostDate post={post} />
+                <PostTags post={post} />
+                <PostTitle post={post} />
+                <PostExcerpt post={post} />
+                {/* <ReadMoreLink post={post} /> */}
+              </div>
+            )
+          })}
+          </div>
+
+          <footer>
+            <div className={Mystyles.PageLinkContainer}>
+              <div>
+                {/* <a onClick={() => history.back()}>← Newer Page</a> */}
+              </div>
+              <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
             </div>
-          )
-        })}
+          </footer>
         </div>
 
-        <footer>
-          <div className={Mystyles.PageLinkContainer}>
-            <div>
-              {/* <a onClick={() => history.back()}>← Newer Page</a> */}
-            </div>
-            <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
-          </div>
-        </footer>
+        <div className={styles.subContent}>
+          <BlogPostLink heading="Recommended" posts={rankedPosts} />
+          <BlogPostLink heading="Latest Posts" posts={recentPosts} />
+          <BlogTagLink heading="Categories" tags={tags} />
+        </div>
       </div>
-
-      <div className={styles.subContent}>
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
-        <BlogPostLink heading="Latest Posts" posts={recentPosts} />
-        <BlogTagLink heading="Categories" tags={tags} />
-      </div>
-    </div>
+    </>
   )
 }
 

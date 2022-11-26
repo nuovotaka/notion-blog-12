@@ -24,6 +24,7 @@ import {
 } from '../../../lib/notion/client'
 import LikeButton from '../../../components/like-button'
 import TocLink from '../../../components/toc'
+import GoogleAnalytics from '../../../components/google-analytics'
 
 export const revalidate = 30
 // export const dynamicParams = false
@@ -58,43 +59,46 @@ const BlogSlugPage = async ({ params: { slug } }) => {
   const otherPostsHavingSameTag = sameTagPosts.filter((p: Post) => p.Slug !== post.Slug)
 
   return (
-    <div className={styles.container}>
-      <div className={styles.mainContent}>
-        <div className={styles.blogpost}>
-          <PostDate post={post} />
-          <PostTags post={post} />
-          <PostTitle post={post} enableLink={false} />
+    <>
+      <GoogleAnalytics pageTitle={post.Title} />
+      <div className={styles.container}>
+        <div className={styles.mainContent}>
+          <div className={styles.blogpost}>
+            <PostDate post={post} />
+            <PostTags post={post} />
+            <PostTitle post={post} enableLink={false} />
 
-          <NoContents contents={blocks} />
-          <PostBody blocks={blocks} />
+            <NoContents contents={blocks} />
+            <PostBody blocks={blocks} />
 
-          <footer>
-            {NEXT_PUBLIC_URL && (
-              <SocialButtons
-                title={post.Title}
-                url={new URL(
-                  getBlogLink(post.Slug),
-                  NEXT_PUBLIC_URL
-                ).toString()}
-                id={post.Slug}
-              />
-            )}
-            <LikeButton slug={post.Slug} like={post.Like} />
-          </footer>
+            <footer>
+              {NEXT_PUBLIC_URL && (
+                <SocialButtons
+                  title={post.Title}
+                  url={new URL(
+                    getBlogLink(post.Slug),
+                    NEXT_PUBLIC_URL
+                  ).toString()}
+                  id={post.Slug}
+                />
+              )}
+              <LikeButton slug={post.Slug} like={post.Like} />
+            </footer>
+          </div>
+        </div>
+
+        <div className={styles.subContent}>
+          <BlogPostLink
+            heading="Posts in the same category"
+            posts={otherPostsHavingSameTag}
+          />
+          <BlogPostLink heading="Recommended" posts={rankedPosts} />
+          <BlogPostLink heading="Latest posts" posts={recentPosts} />
+          <BlogTagLink heading="Categories" tags={tags} />
+          <TocLink blocks={blocks}/>
         </div>
       </div>
-
-      <div className={styles.subContent}>
-        <BlogPostLink
-          heading="Posts in the same category"
-          posts={otherPostsHavingSameTag}
-        />
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
-        <BlogPostLink heading="Latest posts" posts={recentPosts} />
-        <BlogTagLink heading="Categories" tags={tags} />
-        <TocLink blocks={blocks}/>
-      </div>
-    </div>
+    </>
   )
 }
 

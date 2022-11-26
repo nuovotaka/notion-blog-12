@@ -17,6 +17,7 @@ import {
   getFirstPostByTag,
   getAllTags,
 } from '../../../../lib/notion/client'
+import GoogleAnalytics from '../../../../components/google-analytics'
 
 export const revalidate = 60
 // export const dynamicParams = false
@@ -43,37 +44,40 @@ const BlogTagPage = async ({ params: { tag: encodedTag } }) => {
   ])
 
   return (
-    <div className={styles.container}>
-      <div className={styles.mainContent}>
-        <header>
-          <h2>{tag}</h2>
-        </header>
+    <>
+      <GoogleAnalytics pageTitle={`Posts in ${tag}`} />
+      <div className={styles.container}>
+        <div className={styles.mainContent}>
+          <header>
+            <h2>{tag}</h2>
+          </header>
 
-        <div className={styles.template}>
-        {posts.map(post => {
-          return (
-            <div className={styles.post} key={post.Slug}>
-              <PostDate post={post} />
-              <PostTags post={post} />
-              <PostTitle post={post} />
-              <PostExcerpt post={post} />
-              {/* <ReadMoreLink post={post} /> */}
-            </div>
-          )
-        })}
+          <div className={styles.template}>
+          {posts.map(post => {
+            return (
+              <div className={styles.post} key={post.Slug}>
+                <PostDate post={post} />
+                <PostTags post={post} />
+                <PostTitle post={post} />
+                <PostExcerpt post={post} />
+                {/* <ReadMoreLink post={post} /> */}
+              </div>
+            )
+          })}
+          </div>
+
+          <footer>
+            <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
+          </footer>
         </div>
 
-        <footer>
-          <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />
-        </footer>
+        <div className={styles.subContent}>
+          <BlogPostLink heading="Recommended" posts={rankedPosts} />
+          <BlogPostLink heading="Latest Posts" posts={recentPosts} />
+          <BlogTagLink heading="Categories" tags={tags} />
+        </div>
       </div>
-
-      <div className={styles.subContent}>
-        <BlogPostLink heading="Recommended" posts={rankedPosts} />
-        <BlogPostLink heading="Latest Posts" posts={recentPosts} />
-        <BlogTagLink heading="Categories" tags={tags} />
-      </div>
-    </div>
+    </>
   )
 }
 
