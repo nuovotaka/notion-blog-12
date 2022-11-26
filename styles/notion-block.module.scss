@@ -349,15 +349,17 @@
 }
 
 .video {
-  position: relative;
-  padding-top: 56.25%;
+  .youtube {
+    width: 100%;
+    aspect-ratio: 16/9;
+
+    & iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
-.react-player {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
 .spotifyEmbed :first-child {
   display: flex;

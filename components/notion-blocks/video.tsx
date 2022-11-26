@@ -35,8 +35,10 @@ const Video = ({ block }) => {
   }
 
   return (
+    <div className={styles.videowrap}>
     <div className={styles.video}>
       <YouTube videoId={videoId} opts={opts} onReady={onPlayerReady} className={styles.youtube} />
+    </div>
     </div>
   )
 }
