@@ -48,6 +48,7 @@ const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedD
 
         <NoContents contents={posts} />
 
+        <div className={styles.template}>
         {posts.map(post => {
           return (
             <div className={styles.post} key={post.Slug}>
@@ -59,6 +60,7 @@ const BlogTagBeforeDatePage = async ({ params: { tag: encodedTag, date: encodedD
             </div>
           )
         })}
+        </div>
 
         <footer>
           <div className={Mystyles.PageLinkContainer}>

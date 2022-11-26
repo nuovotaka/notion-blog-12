@@ -49,6 +49,7 @@ const BlogTagPage = async ({ params: { tag: encodedTag } }) => {
           <h2>{tag}</h2>
         </header>
 
+        <div className={styles.template}>
         {posts.map(post => {
           return (
             <div className={styles.post} key={post.Slug}>
@@ -60,6 +61,7 @@ const BlogTagPage = async ({ params: { tag: encodedTag } }) => {
             </div>
           )
         })}
+        </div>
 
         <footer>
           <NextPageLink firstPost={firstPost} posts={posts} tag={tag} />

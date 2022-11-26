@@ -33,6 +33,7 @@ const BlogPage = async () => {
       <div className={styles.mainContent}>
         <NoContents contents={posts} />
 
+        <div className={styles.template}>
         {posts.map(post => {
           return (
             <div className={styles.post} key={post.Slug}>
@@ -44,6 +45,7 @@ const BlogPage = async () => {
             </div>
           )
         })}
+        </div>
 
         <footer>
           <div className={Mystyles.nextPageLink}>

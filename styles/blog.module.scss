@@ -26,6 +26,24 @@
     }
     padding: 40px 0 0;
   }
+
+  .template {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include m.mq(tab) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    
+      &::after {
+        content: "";
+        display: block;
+        width: 50%;
+      }
+    }
+  }
 }
 
 .subContent {
@@ -37,6 +55,9 @@
 
 .post {
   width: 90%;
+  @include m.mq(tab) {
+    width: 45%;
+  }
   margin: 0 auto 40px;
   padding: 5px;
   border-radius: 10px;
