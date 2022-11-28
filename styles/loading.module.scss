@@ -1,0 +1,31 @@
+.loader {
+  position: relative;
+
+  .bar {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    animation-name: animation;
+    animation-timing-function: ease-in;
+    animation-duration: 3s;
+    animation-fill-mode: backwards;
+  }
+}
+
+@keyframes animation {
+  0% {
+    width: 0;
+  }
+
+  3% {
+    background: #29d;
+  }
+
+  100% {
+    width: 100%;
+    background: #29d;
+  }
+}

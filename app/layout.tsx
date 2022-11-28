@@ -6,6 +6,7 @@ import '../styles/global.scss'
 import '../styles/syntax-coloring.scss'
 import styles from '../styles/shared.module.scss'
 import GoogleADS from '../components/google-ads'
+import ProgressBar from './loading'
 
 const RootLayout = ({
   children,
@@ -16,6 +17,7 @@ const RootLayout = ({
   <html lang="ja">
     <body>
       <GoogleADS />
+      <ProgressBar />
       <div className={styles.container}>
         <Header />
         <div className={styles.content}>
