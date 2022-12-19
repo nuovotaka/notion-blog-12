@@ -4,8 +4,8 @@ const DarkModeToggle = ({checked, onChange}) => {
 
 	return (
 		<DarkModeSwitch
-			style={{ color: '#888' }}
-			sunColor={ '#888' }
+			// style={{ color: '#888' }}
+			sunColor={ '#FB923C' }
 			checked={checked}
 			onChange={onChange}
 			size={30} />
