@@ -16,8 +16,8 @@ export const getTagBeforeLink = (tag: string, date: string) => {
 
 export const getDateStr = (date: string) => {
   const dt = new Date(date)
-  const isTimeZone = /T/.test(date)
   
+  const isTimeZone = /T/.test(date)
   if (isTimeZone) {
     // Consider timezone
     const elements = date.split('T')[1].split(/([+-])/)
