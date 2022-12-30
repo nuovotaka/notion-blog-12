@@ -8,7 +8,7 @@ import {
 
 describe('getDateStr', () => {
   it('returns str when date has time', async () => {
-    const got = getDateStr('2022-12-30T00:09:00.000:09:00')
+    const got = getDateStr('2022-12-30T00:09:00.000+09:00')
     expect(got).toEqual('2022-12-30')
   })
 
